@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 /* ─────────────────────────────────────────────────────────────
-   Цветовые токены. Два варианта тем — переключаются через
-   класс `dark` на <html>. RGB-тройки нужны, чтобы Tailwind мог
-   подставлять <alpha-value> в утилиты вида `bg-brand-500/40`.
+   Colour tokens. Two themes — toggled via the `dark` class on <html>.
+   RGB triplets are required so Tailwind can substitute <alpha-value>
+   inside utilities like `bg-brand-500/40`.
    ───────────────────────────────────────────────────────────── */
 
 :root {
@@ -35,7 +35,7 @@
 }
 
 .dark {
-  /* Dark theme — глубокий navy + electric indigo + cyan акценты */
+  /* Dark theme — deep navy + electric indigo + cyan accents */
   --brand-50:  224 231 255;
   --brand-100: 199 210 254;
   --brand-200: 165 180 252;
@@ -72,7 +72,7 @@ body {
 
 ::selection { background: rgb(var(--brand-400) / 0.35); color: rgb(var(--ink)); }
 
-/* Scrollbar — приглушённый, под тему */
+/* Scrollbar — muted to match the theme */
 *::-webkit-scrollbar { width: 10px; height: 10px; }
 *::-webkit-scrollbar-track { background: transparent; }
 *::-webkit-scrollbar-thumb { background: rgb(var(--line)); border-radius: 999px; }
@@ -115,7 +115,7 @@ body {
     color: transparent;
   }
 
-  /* Анимированная сетка-фон для hero */
+  /* Animated grid background used in the hero section */
   .hero-grid {
     background-image:
       linear-gradient(rgb(var(--line) / 0.6) 1px, transparent 1px),

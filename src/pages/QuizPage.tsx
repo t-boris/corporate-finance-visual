@@ -46,7 +46,7 @@ export function QuizPage() {
           <header className="mb-5">
             <h1 className="font-display text-3xl font-bold">Quiz</h1>
             <p className="text-ink-muted">
-              Multiple-choice вопросы по курсу. 20% easy · 60% medium · 20% hard в режиме «mixed».
+              Multiple-choice questions across the course. "Mixed" difficulty uses a 20% easy / 60% medium / 20% hard split.
             </p>
           </header>
           <QuizConfigForm onStart={start} />

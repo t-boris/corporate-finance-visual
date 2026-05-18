@@ -17,7 +17,7 @@ export function Layout() {
   const location = useLocation()
   return (
     <div className="min-h-screen flex flex-col">
-      {/* ───── Topbar ───────────────────────────────────────────── */}
+      {/* ───── Topbar ───── */}
       <header className="sticky top-0 z-40 backdrop-blur-xl bg-surface/80 border-b border-line">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 h-16 flex items-center justify-between gap-4">
           <NavLink to="/" className="flex items-center gap-3 group">
@@ -99,9 +99,9 @@ export function Layout() {
         </div>
       </header>
 
-      {/* ───── Sidebar + content ───────────────────────────────── */}
+      {/* ───── Sidebar + content ───── */}
       <div className="mx-auto max-w-7xl px-4 sm:px-6 w-full flex-1 flex gap-6 py-6">
-        {/* Sidebar показываем только на крупных экранах и не на dashboard, чтобы dashboard был широкий */}
+        {/* Sidebar shown only on large screens to keep dashboard wide on smaller widths */}
         <aside className="hidden lg:block w-60 shrink-0">
           <div className="sticky top-20">
             <div className="text-xs uppercase tracking-widest text-ink-muted px-2 mb-2">Course modules</div>

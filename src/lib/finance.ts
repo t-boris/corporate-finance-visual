@@ -1,6 +1,6 @@
 // ─────────────────────────────────────────────────────────────
-// Финансовая математика. Все формулы — на чистом JS, без зависимостей.
-// Используется в интерактивных explorers модулей и в quiz checker.
+// Finance math. All formulas in plain JS, no dependencies.
+// Used by the interactive module explorers and the quiz checker.
 // ─────────────────────────────────────────────────────────────
 
 /** Present Value of single future cash flow.  PV = FV / (1+r)^n */
@@ -24,11 +24,11 @@ export const perpetuity = (c: number, r: number) => c / r
 export const growingPerpetuity = (c: number, r: number, g: number) =>
   r > g ? c / (r - g) : Number.POSITIVE_INFINITY
 
-/** NPV для произвольного массива cash flows. cf[0] — обычно отрицательное (инвестиция). */
+/** NPV for an arbitrary array of cash flows. cf[0] is typically negative (the investment). */
 export const npv = (cashFlows: number[], r: number) =>
   cashFlows.reduce((acc, cf, t) => acc + cf / Math.pow(1 + r, t), 0)
 
-/** IRR через бисекцию. Возвращает null если нет sign change или не сходится. */
+/** IRR via bisection. Returns null when there is no sign change or it fails to converge. */
 export const irr = (cashFlows: number[], guessLo = -0.99, guessHi = 5, iters = 100): number | null => {
   let lo = guessLo, hi = guessHi
   const f = (r: number) => npv(cashFlows, r)
@@ -53,7 +53,7 @@ export const wacc = (e: number, d: number, re: number, rd: number, tc: number) =
   return (e / v) * re + (d / v) * rd * (1 - tc)
 }
 
-/** Форматирование валюты — без локали браузера, чтобы согласовать с курсом (USD). */
+/** Currency formatting — fixed to en-US/USD to match the course conventions. */
 export const fmtUSD = (v: number, fractionDigits = 0) =>
   v.toLocaleString('en-US', {
     style: 'currency',

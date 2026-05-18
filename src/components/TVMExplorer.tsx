@@ -7,8 +7,8 @@ import { futureValue, fmtUSD } from '@/lib/finance'
 /**
  * Interactive Time Value of Money explorer.
  *
- * Пользователь крутит PV, ставку r и срок n — графики и числа реагируют живо.
- * Назначение — построить интуицию: «деньги растут экспоненциально, ставка двигает кривую».
+ * Move PV, r, and n sliders — the chart and headline number update live.
+ * The goal is intuition: "money grows exponentially, and the rate bends the curve".
  */
 export function TVMExplorer() {
   const [pv, setPv] = useState(1000)
@@ -21,7 +21,7 @@ export function TVMExplorer() {
       arr.push({
         year: t,
         fv: futureValue(pv, r, t),
-        // Сравнение с линейным простым процентом (без compounding) — наглядно показывает power of compounding
+        // Simple-interest baseline for comparison — makes the power of compounding visible.
         real: pv * (1 + r * t),
       })
     }
@@ -78,8 +78,8 @@ export function TVMExplorer() {
       </div>
 
       <p className="text-xs text-ink-muted mt-2">
-        Тёмная линия — compound interest <span className="font-mono">FV = PV·(1+r)<sup>n</sup></span>,
-        светлая — simple interest <span className="font-mono">PV·(1+r·n)</span>. Разница — это «процент на процент».
+        Dark line — compound interest <span className="font-mono">FV = PV·(1+r)<sup>n</sup></span>,
+        light line — simple interest <span className="font-mono">PV·(1+r·n)</span>. The gap is interest on interest.
       </p>
     </div>
   )

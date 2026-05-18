@@ -9,8 +9,8 @@ interface ThemeState {
   toggle: () => void
 }
 
-// Привязка класса `dark` к <html> делается реактивно из компонента-обёртки.
-// Тут — только хранилище + persist в localStorage.
+// Binding the `dark` class on <html> is done reactively from a wrapper hook.
+// This store only manages state + localStorage persistence.
 export const useThemeStore = create<ThemeState>()(
   persist(
     (set, get) => ({

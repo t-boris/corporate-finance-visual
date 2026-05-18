@@ -2,8 +2,8 @@ import type { QuizConfig, QuizQuestion } from '@/lib/types'
 import { QUESTIONS } from '@/data/questions'
 
 /**
- * Случайная выборка `count` вопросов согласно конфигу.
- * Если `difficulty === 'mixed'` — раскладывает по 20/60/20 (easy/med/hard).
+ * Random selection of `count` questions according to the config.
+ * When `difficulty === 'mixed'`, the count is split 20/60/20 (easy/medium/hard).
  */
 export function buildQuiz(cfg: QuizConfig): QuizQuestion[] {
   const inModule = (q: QuizQuestion) =>
@@ -31,7 +31,7 @@ export function buildQuiz(cfg: QuizConfig): QuizQuestion[] {
   ;(['easy', 'medium', 'hard'] as const).forEach((d) => {
     picked.push(...buckets[d].slice(0, target[d]))
   })
-  // Добиваем из общего пула, если по сложности не хватило
+  // Top up from the full pool if any difficulty bucket fell short
   if (picked.length < cfg.count) {
     const rest = shuffle(pool.filter((q) => !picked.includes(q)))
     picked.push(...rest.slice(0, cfg.count - picked.length))

@@ -28,7 +28,7 @@ export function ModuleCard({ module: m, progress, index = 0 }: Props) {
         to={`/modules/${m.slug}`}
         className="card card-hover block p-5 overflow-hidden relative"
       >
-        {/* Декоративный градиент-блик в углу — раскрашен accent-ом модуля */}
+        {/* Decorative gradient glow in the corner, coloured by the module accent */}
         <div
           className="pointer-events-none absolute -top-12 -right-12 h-40 w-40 rounded-full opacity-30 blur-2xl
                      transition-opacity duration-300 group-hover:opacity-60"

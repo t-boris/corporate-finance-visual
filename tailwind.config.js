@@ -5,7 +5,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Brand palette — обращение через CSS variables, чтобы темы переключались мгновенно
+        // Brand palette — accessed via CSS variables so the themes swap instantly without re-render
         brand: {
           50:  'rgb(var(--brand-50) / <alpha-value>)',
           100: 'rgb(var(--brand-100) / <alpha-value>)',

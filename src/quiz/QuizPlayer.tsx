@@ -19,7 +19,7 @@ export function QuizPlayer({ questions, config, onFinish }: Props) {
   const q = questions[idx]
   const answered = Object.values(answers).filter((v) => v !== null && v !== undefined).length
 
-  // Таймер
+  // Timer
   const totalSeconds = (config.minutes ?? 0) * 60
   const [secondsLeft, setSecondsLeft] = useState(totalSeconds)
   useEffect(() => {

@@ -7,7 +7,7 @@ interface Props {
   className?: string
 }
 
-/** Tween-анимация числа requestAnimationFrame'ом — без зависимостей. */
+/** Number tween via requestAnimationFrame — no external animation library needed. */
 export function AnimatedNumber({ value, durationMs = 800, format = (v) => v.toFixed(0), className }: Props) {
   const [display, setDisplay] = useState(value)
   const fromRef = useRef(value)

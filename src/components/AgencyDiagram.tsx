@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 
-/** Простая SVG-схема principal-agent с лёгкой анимацией. Помогает запомнить структуру. */
+/** Simple SVG diagram of the principal–agent relationship with subtle animation. */
 export function AgencyDiagram() {
   return (
     <div className="card p-5">
@@ -26,7 +26,7 @@ export function AgencyDiagram() {
             Shareholders
           </text>
           <text x="100" y="124" textAnchor="middle" style={{ fill: 'rgb(var(--ink-muted))' }} fontSize={11}>
-            Principals · собственники
+            Principals · owners
           </text>
         </g>
 
@@ -34,14 +34,14 @@ export function AgencyDiagram() {
         <g>
           <rect x="220" y="20" rx="14" width="160" height="50" fill="rgb(var(--surface-3))" stroke="rgb(var(--line))" />
           <text x="300" y="42" textAnchor="middle" fontWeight={600} style={{ fill: 'rgb(var(--ink))' }}>Board of Directors</text>
-          <text x="300" y="58" textAnchor="middle" fontSize={11} style={{ fill: 'rgb(var(--ink-muted))' }}>избирается акционерами</text>
+          <text x="300" y="58" textAnchor="middle" fontSize={11} style={{ fill: 'rgb(var(--ink-muted))' }}>elected by shareholders</text>
         </g>
 
         {/* Managers */}
         <g>
           <rect x="220" y="150" rx="14" width="160" height="50" fill="rgb(var(--surface-3))" stroke="rgb(var(--line))" />
           <text x="300" y="172" textAnchor="middle" fontWeight={600} style={{ fill: 'rgb(var(--ink))' }}>Managers (CEO/CFO)</text>
-          <text x="300" y="188" textAnchor="middle" fontSize={11} style={{ fill: 'rgb(var(--ink-muted))' }}>Agents · принимают решения</text>
+          <text x="300" y="188" textAnchor="middle" fontSize={11} style={{ fill: 'rgb(var(--ink-muted))' }}>Agents · make decisions</text>
         </g>
 
         {/* Firm */}
@@ -80,8 +80,8 @@ export function AgencyDiagram() {
         <text x="385" y="160" fontSize={10} style={{ fill: 'rgb(var(--ink-muted))' }}>run</text>
       </svg>
       <p className="text-xs text-ink-muted mt-2">
-        Agency problem появляется, когда стимулы Agents (managers) расходятся со стимулами Principals (shareholders).
-        Governance — это арсенал инструментов, который выравнивает эти стимулы.
+        The agency problem arises when the incentives of Agents (managers) diverge from those of Principals (shareholders).
+        Corporate governance is the toolkit that realigns them.
       </p>
     </div>
   )

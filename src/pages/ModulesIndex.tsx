@@ -9,7 +9,7 @@ export function ModulesIndex() {
       <header>
         <h1 className="font-display text-3xl font-bold">All modules</h1>
         <p className="text-ink-muted">
-          Содержание курса Corporate Finance · FIN 570 · UIUC iMBA. Заполняем модули по мере прохождения курса.
+          Course outline · Corporate Finance · FIN 570 · UIUC iMBA. Modules are filled in as the course progresses.
         </p>
       </header>
 

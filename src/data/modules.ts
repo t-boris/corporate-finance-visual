@@ -1,17 +1,16 @@
 import type { ModuleMeta } from '@/lib/types'
 
-// Программа курса UIUC iMBA · FIN 570 · Corporate Finance.
-// Источник: official course outline в Info.md.
-// Преподаватели: Heitor Almeida · Xiangyi Spencer · Stefan Zeume.
+// Course outline · UIUC iMBA · FIN 570 · Corporate Finance.
+// Source: official course outline. Instructors: Heitor Almeida · Xiangyi Spencer · Stefan Zeume.
 export const MODULES: ModuleMeta[] = [
   {
     id: 1,
     slug: 'objective-and-language',
     title: 'The Objective and Language of Corporate Finance',
     shortTitle: 'Objective & Language',
-    tagline: 'Зачем существует финансовый менеджмент и на каком языке он говорит',
+    tagline: 'Why corporate finance exists and the language it speaks',
     description:
-      'Цель корпоративных финансов, shareholder value, agency problems, базовые финансовые отчёты и язык денежных потоков.',
+      'The objective of the firm, shareholder value, agency problems, financial statements, and the foundations of the time value of money.',
     status: 'ready',
     topics: [
       'Shareholder value maximization',
@@ -21,7 +20,7 @@ export const MODULES: ModuleMeta[] = [
       'Time value of money fundamentals',
     ],
     estimatedMinutes: 90,
-    accent: '#6366f1', // indigo-500
+    accent: '#6366f1',
     icon: 'Compass',
   },
   {
@@ -29,9 +28,9 @@ export const MODULES: ModuleMeta[] = [
     slug: 'financial-planning',
     title: 'Financial Planning',
     shortTitle: 'Financial Planning',
-    tagline: 'От прогноза продаж до потребности во внешнем финансировании',
+    tagline: 'From sales forecasts to external financing needs',
     description:
-      'Pro-forma финансовые отчёты, sustainable growth, percentage-of-sales, EFN, операционные и финансовые leverages.',
+      'Pro-forma financial statements, sustainable growth, percentage-of-sales, external financing needed (EFN), and operating / financial leverage.',
     status: 'planned',
     topics: [
       'Pro-forma statements',
@@ -40,7 +39,7 @@ export const MODULES: ModuleMeta[] = [
       'Operating & financial leverage',
     ],
     estimatedMinutes: 75,
-    accent: '#06b6d4', // cyan-500
+    accent: '#06b6d4',
     icon: 'LineChart',
   },
   {
@@ -48,9 +47,9 @@ export const MODULES: ModuleMeta[] = [
     slug: 'investment-decisions',
     title: 'Making Investment Decisions',
     shortTitle: 'Investment Decisions',
-    tagline: 'NPV, IRR и логика принятия капитальных решений',
+    tagline: 'NPV, IRR, and the logic of capital budgeting',
     description:
-      'Discounted cash flows, NPV vs IRR, payback, profitability index, incremental cash flows, sensitivity & scenario analysis.',
+      'Discounted cash flows, NPV vs. IRR, payback, profitability index, incremental cash flows, and sensitivity & scenario analysis.',
     status: 'planned',
     topics: ['NPV / IRR / Payback', 'Incremental cash flows', 'Sensitivity & scenarios', 'Real options intro'],
     estimatedMinutes: 110,
@@ -62,9 +61,9 @@ export const MODULES: ModuleMeta[] = [
     slug: 'ma-risk-performance',
     title: 'Mergers and Acquisitions, Risk, and Performance Evaluation',
     shortTitle: 'M&A · Risk · Performance',
-    tagline: 'Слияния, риск-доходность и оценка эффективности',
+    tagline: 'Combining firms, pricing risk, and measuring performance',
     description:
-      'M&A motives и synergies, CAPM, beta, диверсификация, performance metrics (ROE, ROIC, EVA), event studies.',
+      'M&A motives and synergies, CAPM and beta, diversification, and performance metrics (ROE, ROIC, EVA), event studies.',
     status: 'planned',
     topics: ['M&A & synergies', 'CAPM & beta', 'Risk diversification', 'ROE / ROIC / EVA'],
     estimatedMinutes: 120,
@@ -76,9 +75,9 @@ export const MODULES: ModuleMeta[] = [
     slug: 'capital-structure',
     title: 'Raising Financing: The Capital Structure Decision',
     shortTitle: 'Capital Structure',
-    tagline: 'Долг vs. equity, MM-теорема и оптимальная структура',
+    tagline: 'Debt vs. equity, MM, and the optimal mix',
     description:
-      'Modigliani–Miller, налоговый щит, costs of financial distress, trade-off & pecking order, signalling, payout effects.',
+      'Modigliani–Miller, the tax shield, costs of financial distress, trade-off and pecking-order theories, signalling, and payout effects.',
     status: 'planned',
     topics: ['MM theorem', 'Tax shield', 'Trade-off & pecking order', 'WACC sensitivity'],
     estimatedMinutes: 100,
@@ -90,9 +89,9 @@ export const MODULES: ModuleMeta[] = [
     slug: 'debt-and-payout',
     title: 'Understanding Debt Financing and Payout Policy',
     shortTitle: 'Debt & Payout',
-    tagline: 'Долг, ковенанты, дивиденды и обратный выкуп',
+    tagline: 'Bonds, covenants, dividends, and buybacks',
     description:
-      'Bond pricing, yield, duration, credit ratings, dividends vs buybacks, payout signalling, налоговые соображения.',
+      'Bond pricing, yield, duration, credit ratings, dividends vs. buybacks, payout signalling, and tax considerations.',
     status: 'planned',
     topics: ['Bond pricing & yield', 'Duration & credit risk', 'Dividends vs. buybacks', 'Payout signalling'],
     estimatedMinutes: 95,
@@ -104,9 +103,9 @@ export const MODULES: ModuleMeta[] = [
     slug: 'risk-management',
     title: 'Risk Management',
     shortTitle: 'Risk Management',
-    tagline: 'Хеджирование, деривативы и корпоративный риск',
+    tagline: 'Hedging, derivatives, and corporate risk',
     description:
-      'Зачем компании хеджируют, форварды/фьючерсы/опционы/свопы, VaR, FX и interest rate риски.',
+      'Why firms hedge, forwards, futures, options and swaps, VaR fundamentals, and managing FX and interest-rate exposures.',
     status: 'planned',
     topics: ['Why hedge?', 'Forwards, futures, options, swaps', 'VaR basics', 'FX & rate hedging'],
     estimatedMinutes: 85,
@@ -118,11 +117,11 @@ export const MODULES: ModuleMeta[] = [
     slug: 'finance-governance-society',
     title: 'Finance, Governance and Society',
     shortTitle: 'Governance & Society',
-    tagline: 'Governance, ESG и роль финансов в обществе',
+    tagline: 'Governance, ESG, and the role of finance',
     description:
-      'Корпоративное управление, board structure, executive compensation, ESG, stakeholder vs. shareholder теории.',
+      'Corporate governance, board structure, executive compensation, ESG, and stakeholder vs. shareholder views of the firm.',
     status: 'planned',
-    topics: ['Corporate governance', 'Executive comp', 'ESG & stakeholders', 'Финансы и общество'],
+    topics: ['Corporate governance', 'Executive comp', 'ESG & stakeholders', 'Finance & society'],
     estimatedMinutes: 70,
     accent: '#14b8a6',
     icon: 'Globe',

@@ -12,10 +12,10 @@ interface Props {
 
 const COUNTS: QuizConfig['count'][] = [5, 10, 20]
 const DIFFICULTIES: { value: 'mixed' | Difficulty; label: string; description: string }[] = [
-  { value: 'mixed',  label: 'Mixed',  description: '20/60/20 — как на реальном экзамене' },
-  { value: 'easy',   label: 'Easy',   description: 'Только лёгкие — для разогрева' },
-  { value: 'medium', label: 'Medium', description: 'Средняя сложность' },
-  { value: 'hard',   label: 'Hard',   description: 'Только сложные — challenge mode' },
+  { value: 'mixed',  label: 'Mixed',  description: '20/60/20 — exam-style mix' },
+  { value: 'easy',   label: 'Easy',   description: 'Warm-up · easy only' },
+  { value: 'medium', label: 'Medium', description: 'Mid-difficulty questions' },
+  { value: 'hard',   label: 'Hard',   description: 'Challenge mode · hard only' },
 ]
 
 export function QuizConfigForm({ onStart }: Props) {
@@ -28,14 +28,14 @@ export function QuizConfigForm({ onStart }: Props) {
   const [minutes, setMinutes] = useState(10)
   const [difficulty, setDifficulty] = useState<QuizConfig['difficulty']>('mixed')
 
-  // Кол-во доступных вопросов в текущей выборке
+  // How many questions are available given the current filters.
   const availableCount = (() => {
     const ids = moduleIds.includes(0) ? null : moduleIds
     return QUESTIONS.filter((q) => (!ids || ids.includes(q.moduleId)))
       .filter((q) => difficulty === 'mixed' || q.difficulty === difficulty).length
   })()
 
-  // Если выбран Easy/Hard, может не хватить вопросов на 20 — даунгрейдим
+  // If Easy/Hard alone doesn't have 20 items, downgrade the count to the largest feasible value.
   useEffect(() => {
     if (availableCount < count) {
       const next = COUNTS.filter((c) => c <= availableCount).pop()
@@ -83,7 +83,7 @@ export function QuizConfigForm({ onStart }: Props) {
                   disabled
                   color={m.accent}
                   label={`M${m.id} (no Q)`}
-                  title={`${m.shortTitle} — вопросы появятся вместе с контентом`}
+                  title={`${m.shortTitle} — questions will be added with the module content`}
                 />
               )
             }
@@ -125,7 +125,7 @@ export function QuizConfigForm({ onStart }: Props) {
           })}
         </div>
         <div className="text-xs text-ink-muted mt-2">
-          Доступно в выборке: <span className="font-mono text-ink">{availableCount}</span>
+          Available in pool: <span className="font-mono text-ink">{availableCount}</span>
         </div>
       </section>
 

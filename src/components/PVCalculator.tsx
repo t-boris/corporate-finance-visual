@@ -6,8 +6,8 @@ import { presentValue, pvAnnuity, perpetuity, growingPerpetuity, fmtUSD, fmtPct 
 type Mode = 'single' | 'annuity' | 'perpetuity' | 'growing'
 
 /**
- * Универсальный PV-калькулятор: переключение между single CF, annuity,
- * perpetuity и growing perpetuity. Цель — натренировать выбор правильной формулы.
+ * Universal PV calculator: toggles between single CF, annuity,
+ * perpetuity, and growing perpetuity. Goal — practice picking the right formula.
  */
 export function PVCalculator() {
   const [mode, setMode] = useState<Mode>('single')
@@ -31,7 +31,7 @@ export function PVCalculator() {
       <header className="mb-3">
         <div className="text-[11px] uppercase tracking-widest text-ink-muted">Interactive</div>
         <h3 className="font-display text-lg font-semibold">Present Value calculator</h3>
-        <p className="text-sm text-ink-muted">Переключи режим — формула меняется, число пересчитывается.</p>
+        <p className="text-sm text-ink-muted">Switch the mode — the formula and result update instantly.</p>
       </header>
 
       <div className="flex flex-wrap gap-2 mb-4">

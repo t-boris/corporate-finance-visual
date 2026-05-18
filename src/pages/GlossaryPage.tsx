@@ -11,7 +11,7 @@ export function GlossaryPage() {
   const [query, setQuery] = useState('')
   const [selectedModule, setSelectedModule] = useState<number>(initialModule || 0)
 
-  // sync url ↔ state (только когда меняется фильтр модуля)
+  // Sync url ↔ state when the module filter changes.
   useEffect(() => {
     if (selectedModule) params.set('module', String(selectedModule))
     else params.delete('module')
@@ -45,7 +45,7 @@ export function GlossaryPage() {
         <div>
           <h1 className="font-display text-3xl font-bold">Glossary</h1>
           <p className="text-ink-muted">
-            Все термины курса в одном месте. Ищи по слову, определению или связанному термину.
+            Every term in the course in one place. Search by name, definition, or related concept.
           </p>
         </div>
         <div className="text-sm text-ink-muted">
@@ -148,8 +148,8 @@ export function GlossaryPage() {
       {filtered.length === 0 && (
         <div className="card p-10 text-center">
           <div className="text-3xl mb-2">🔎</div>
-          <h3 className="font-display font-semibold">Ничего не найдено</h3>
-          <p className="text-ink-muted text-sm">Попробуй изменить запрос или сбросить фильтр модуля.</p>
+          <h3 className="font-display font-semibold">No matches</h3>
+          <p className="text-ink-muted text-sm">Try a different query or clear the module filter.</p>
         </div>
       )}
     </div>

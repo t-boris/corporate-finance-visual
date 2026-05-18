@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { useThemeStore } from '@/store/theme'
 
-/** Привязывает выбранную тему к DOM (<html class="dark|light">) и meta theme-color. */
+/** Binds the active theme to the DOM (<html class="dark|light">) and meta theme-color. */
 export function useApplyTheme() {
   const theme = useThemeStore((s) => s.theme)
   useEffect(() => {

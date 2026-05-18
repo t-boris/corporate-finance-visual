@@ -15,10 +15,10 @@ export function QuizResults({ questions, answers, onRestart }: Props) {
   const correct = questions.filter((q) => answers[q.id] === q.answerIndex).length
   const ratio = correct / questions.length
   const verdict =
-    ratio >= 0.9 ? { tone: 'success', title: 'Outstanding', text: 'Уверенное владение материалом.' }
-    : ratio >= 0.7 ? { tone: 'brand', title: 'Solid pass', text: 'Хороший результат — закрой пробелы в нескольких темах.' }
-    : ratio >= 0.5 ? { tone: 'warn', title: 'Almost there', text: 'Стоит освежить материал перед экзаменом.' }
-    : { tone: 'danger', title: 'Needs work', text: 'Лучше пройти модули ещё раз и попробовать снова.' }
+    ratio >= 0.9 ? { tone: 'success', title: 'Outstanding', text: 'Strong mastery of the material.' }
+    : ratio >= 0.7 ? { tone: 'brand', title: 'Solid pass', text: 'Good result — close the remaining gaps and you\'re done.' }
+    : ratio >= 0.5 ? { tone: 'warn', title: 'Almost there', text: 'Worth a refresh of the material before the exam.' }
+    : { tone: 'danger', title: 'Needs work', text: 'Re-read the module and try again — the basics matter.' }
 
   return (
     <div className="space-y-5">

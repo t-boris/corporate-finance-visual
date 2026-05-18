@@ -4,8 +4,8 @@ import { BrowserRouter, HashRouter } from 'react-router-dom'
 import App from './App'
 import './styles/globals.css'
 
-// HashRouter — чтобы приложение могло запускаться и как статика (file://) и на GitHub Pages
-// без серверного rewrites. Это даёт переносимость "из коробки".
+// HashRouter — so the app runs equally well as static files (file://) and on GitHub Pages
+// without server-side rewrites. Maximum portability out of the box.
 const Router = HashRouter
 
 const root = ReactDOM.createRoot(document.getElementById('root')!)

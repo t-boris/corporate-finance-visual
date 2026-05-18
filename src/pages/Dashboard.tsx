@@ -50,9 +50,9 @@ export function Dashboard() {
             Learn <span className="gradient-text">Corporate Finance</span><br />the visual way.
           </h1>
           <p className="text-ink-soft mt-4 text-base md:text-lg max-w-2xl">
-            8 модулей курса FIN 570, интерактивные финансовые explorer'ы, глоссарий с поиском,
-            и конфигурируемые тесты с разбором ошибок. Всё построено вокруг наглядности —
-            графиков, анимаций и моделей, которые можно «крутить».
+            All 8 modules of FIN 570, with interactive financial explorers, a searchable glossary,
+            and configurable quizzes that explain every answer. Built for visual learners — charts,
+            animations, and models you can play with.
           </p>
           <div className="mt-7 flex flex-wrap gap-3">
             <Link to="/modules" className="btn-primary">
@@ -87,7 +87,7 @@ export function Dashboard() {
         <div className="flex items-end justify-between mb-4">
           <div>
             <h2 className="font-display text-2xl font-semibold">Course modules</h2>
-            <p className="text-ink-muted text-sm">Кликни на модуль, чтобы погрузиться в материал.</p>
+            <p className="text-ink-muted text-sm">Click a module to dive into the material.</p>
           </div>
           <div className="hidden sm:flex items-center gap-2 text-xs text-ink-muted">
             <Zap size={14} className="text-brand-400" />
@@ -101,12 +101,12 @@ export function Dashboard() {
         </div>
       </section>
 
-      {/* ───── Radar — silhouette прогресса ───── */}
+      {/* ───── Radar — progress silhouette ───── */}
       <section className="card p-6">
         <div className="flex items-end justify-between mb-2">
           <div>
             <h3 className="font-display text-xl font-semibold">Mastery silhouette</h3>
-            <p className="text-ink-muted text-sm">Лучший результат теста по каждому модулю.</p>
+            <p className="text-ink-muted text-sm">Best quiz score by module.</p>
           </div>
         </div>
         <div className="h-72">
