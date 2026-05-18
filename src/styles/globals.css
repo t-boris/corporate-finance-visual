@@ -1,0 +1,126 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─────────────────────────────────────────────────────────────
+   Цветовые токены. Два варианта тем — переключаются через
+   класс `dark` на <html>. RGB-тройки нужны, чтобы Tailwind мог
+   подставлять <alpha-value> в утилиты вида `bg-brand-500/40`.
+   ───────────────────────────────────────────────────────────── */
+
+:root {
+  /* Light theme */
+  --brand-50:  238 242 255;
+  --brand-100: 224 231 255;
+  --brand-200: 199 210 254;
+  --brand-300: 165 180 252;
+  --brand-400: 129 140 248;
+  --brand-500:  99 102 241;
+  --brand-600:  79  70 229;
+  --brand-700:  67  56 202;
+  --brand-800:  55  48 163;
+  --brand-900:  49  46 129;
+
+  --surface:    248 250 252;
+  --surface-2:  255 255 255;
+  --surface-3:  241 245 249;
+  --ink:         15  23  42;
+  --ink-soft:    51  65  85;
+  --ink-muted:  100 116 139;
+  --line:       226 232 240;
+  --accent:      14 165 233;  /* sky-500 */
+  --success:     16 185 129;  /* emerald-500 */
+  --warn:       234 179   8;  /* amber-500 */
+  --danger:    239  68  68;   /* red-500 */
+}
+
+.dark {
+  /* Dark theme — глубокий navy + electric indigo + cyan акценты */
+  --brand-50:  224 231 255;
+  --brand-100: 199 210 254;
+  --brand-200: 165 180 252;
+  --brand-300: 129 140 248;
+  --brand-400:  99 102 241;
+  --brand-500:  79  70 229;
+  --brand-600:  67  56 202;
+  --brand-700:  55  48 163;
+  --brand-800:  49  46 129;
+  --brand-900:  30  27  75;
+
+  --surface:    11  16  32;   /* near-black navy */
+  --surface-2: 17  24  39;    /* card */
+  --surface-3: 30  41  59;    /* elevated */
+  --ink:       241 245 249;
+  --ink-soft:  203 213 225;
+  --ink-muted: 148 163 184;
+  --line:       51  65  85;
+  --accent:    34 211 238;    /* cyan-400 */
+  --success:   52 211 153;    /* emerald-400 */
+  --warn:     250 204  21;
+  --danger:   248 113 113;
+}
+
+html, body, #root { height: 100%; }
+
+body {
+  @apply bg-surface text-ink font-sans antialiased;
+  background-image:
+    radial-gradient(1200px 600px at 80% -10%, rgb(var(--brand-500) / 0.15), transparent 60%),
+    radial-gradient(900px 500px at -10% 30%, rgb(var(--accent) / 0.10), transparent 60%);
+  background-attachment: fixed;
+}
+
+::selection { background: rgb(var(--brand-400) / 0.35); color: rgb(var(--ink)); }
+
+/* Scrollbar — приглушённый, под тему */
+*::-webkit-scrollbar { width: 10px; height: 10px; }
+*::-webkit-scrollbar-track { background: transparent; }
+*::-webkit-scrollbar-thumb { background: rgb(var(--line)); border-radius: 999px; }
+*::-webkit-scrollbar-thumb:hover { background: rgb(var(--ink-muted)); }
+
+/* Reusable component classes */
+@layer components {
+  .card {
+    @apply rounded-2xl bg-surface-2 border border-line shadow-soft;
+  }
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-glow hover:-translate-y-0.5;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2 rounded-xl font-medium
+           transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-400/60
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .btn-primary {
+    @apply btn bg-brand-500 text-white hover:bg-brand-600 active:scale-[0.98] shadow-soft;
+  }
+  .btn-ghost {
+    @apply btn text-ink-soft hover:text-ink hover:bg-surface-3;
+  }
+  .btn-outline {
+    @apply btn bg-transparent text-ink border border-line hover:border-brand-400 hover:text-brand-500;
+  }
+  .pill {
+    @apply inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+  .pill-easy   { @apply pill bg-success/10 text-success border border-success/30; }
+  .pill-medium { @apply pill bg-warn/10    text-warn    border border-warn/30; }
+  .pill-hard   { @apply pill bg-danger/10  text-danger  border border-danger/30; }
+  .pill-brand  { @apply pill bg-brand-500/10 text-brand-500 border border-brand-500/30; }
+
+  .gradient-text {
+    background: linear-gradient(120deg, rgb(var(--brand-400)), rgb(var(--accent)));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* Анимированная сетка-фон для hero */
+  .hero-grid {
+    background-image:
+      linear-gradient(rgb(var(--line) / 0.6) 1px, transparent 1px),
+      linear-gradient(90deg, rgb(var(--line) / 0.6) 1px, transparent 1px);
+    background-size: 36px 36px;
+    mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black, transparent 70%);
+  }
+}
