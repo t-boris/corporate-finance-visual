@@ -11,3 +11,4 @@ dist-ssr
 # Vite временные файлы
 *.tsbuildinfo
 *.timestamp-*.mjs
+.vercel

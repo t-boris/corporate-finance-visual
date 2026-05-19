@@ -76,7 +76,7 @@ export function StockPriceComposition() {
         </label>
       </div>
 
-      <div className="flex items-end gap-1 h-44 bg-surface-3/40 rounded-xl border border-line p-3 overflow-x-auto">
+      <div className="flex items-stretch gap-1 h-44 bg-surface-3/40 rounded-xl border border-line p-3 overflow-x-auto">
         {pvs.map((pv, i) => (
           <div key={i} className="flex flex-col items-center justify-end flex-1 min-w-[28px]">
             <motion.div
