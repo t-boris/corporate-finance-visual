@@ -317,6 +317,931 @@ export const QUESTIONS: QuizQuestion[] = [
     difficulty: 'hard',
     topic: 'Society conflict',
   },
+
+  // ════════════════════════════════════════════════════════════
+  // MODULE 2 · Financial Planning · 4 easy · 12 medium · 4 hard
+  // ════════════════════════════════════════════════════════════
+
+  // ─── EASY ────────────────────────────────────────────────
+  {
+    id: 'm2-e1',
+    moduleId: 2,
+    prompt: 'In the percentage-of-sales forecasting model, most income-statement items are assumed to:',
+    choices: [
+      'Stay constant in dollar terms',
+      'Grow at the same rate as revenue (constant proportion of sales)',
+      'Grow at the rate of inflation',
+      'Equal the prior year plus a fixed dollar amount',
+    ],
+    answerIndex: 1,
+    explanation:
+      'The model holds items at a constant fraction of revenue, so they grow with sales. Key exceptions: interest expense (depends on debt) and one-time items (set to zero).',
+    difficulty: 'easy',
+    topic: 'Forecasting',
+  },
+  {
+    id: 'm2-e2',
+    moduleId: 2,
+    prompt: 'Which expression defines Net Working Capital (NWC)?',
+    choices: [
+      'Cash + Receivables − Inventory',
+      'Receivables + Inventory − Payables',
+      'Current Assets − Cash',
+      'Inventory + Payables − Receivables',
+    ],
+    answerIndex: 1,
+    explanation:
+      'NWC = Receivables + Inventory − Payables. An increase in NWC ties up cash and is treated as an investment (a negative cash flow).',
+    difficulty: 'easy',
+    topic: 'Working capital',
+  },
+  {
+    id: 'm2-e3',
+    moduleId: 2,
+    prompt: 'The cash conversion cycle measures:',
+    choices: [
+      'How profitable a firm\'s products are',
+      'How long it takes a firm to turn working-capital investments back into cash',
+      'How much debt matures each year',
+      'The firm\'s tax rate on operating income',
+    ],
+    answerIndex: 1,
+    explanation:
+      'CCC = Collection Period + Days in Inventory − Payable Period — the time from paying for inventory to collecting from customers, less supplier financing.',
+    difficulty: 'easy',
+    topic: 'Cash conversion cycle',
+  },
+  {
+    id: 'm2-e4',
+    moduleId: 2,
+    prompt: 'Why is a bank line of credit described as "almost a substitute for cash"?',
+    choices: [
+      'Because the bank deposits cash into the firm every month',
+      'Because its terms (limit and rate) are negotiated ahead of time, so the firm can draw on it when liquidity is needed',
+      'Because it never charges any fees',
+      'Because it converts inventory into cash automatically',
+    ],
+    answerIndex: 1,
+    explanation:
+      'The pre-negotiated limit and rate mean the bank has effectively pre-agreed to lend, so the line provides liquidity insurance — like cash on standby.',
+    difficulty: 'easy',
+    topic: 'Credit lines',
+  },
+
+  // ─── MEDIUM ──────────────────────────────────────────────
+  {
+    id: 'm2-m1',
+    moduleId: 2,
+    prompt:
+      'PepsiCo\'s 2021 COGS was ≈$37.0B on revenue of ≈$79.5B. Using a percentage-of-sales model with 3.9% revenue growth, what is forecast 2022 COGS?',
+    choices: ['≈ $35.6B', '≈ $37.0B', '≈ $38.5B', '≈ $41.1B'],
+    answerIndex: 2,
+    explanation:
+      'COGS holds its proportion of sales, so it grows 3.9%: 37.0 × 1.039 ≈ $38.5B.',
+    difficulty: 'medium',
+    topic: 'Forecasting',
+  },
+  {
+    id: 'm2-m2',
+    moduleId: 2,
+    prompt:
+      'In the PepsiCo forecast, how should interest expense be projected, given $42.4B of debt at a 4% rate?',
+    choices: [
+      'As 3.9% of revenue, like the other items',
+      'As the interest rate times the debt balance (≈4% × $42.4B), NOT a percentage of sales',
+      'As zero, because it is a one-time item',
+      'As a constant 12% of the change in revenue',
+    ],
+    answerIndex: 1,
+    explanation:
+      'Interest depends on how much DEBT the firm carries, not on revenue. 4% × $42.4B ≈ $1.7B per year — it must not be scaled with sales.',
+    difficulty: 'medium',
+    topic: 'Forecasting',
+  },
+  {
+    id: 'm2-m3',
+    moduleId: 2,
+    prompt:
+      'A company can factor a $300M receivable (due in one year) for $280M today. What is the implied annual interest rate?',
+    choices: ['≈ 6.67%', '≈ 7.14%', '≈ 20.0%', '≈ 2.86%'],
+    answerIndex: 1,
+    explanation:
+      'Implied rate = Face/Advance − 1 = 300/280 − 1 ≈ 7.14%. That is the rate at which $280M grows to $300M in a year — the cost of getting cash early.',
+    difficulty: 'medium',
+    topic: 'Factoring',
+  },
+  {
+    id: 'm2-m4',
+    moduleId: 2,
+    prompt:
+      'A firm has $100M of accounts receivable and $2B of annual revenue. What is its average collection period?',
+    choices: ['≈ 5 days', '≈ 18 days', '≈ 37 days', '≈ 50 days'],
+    answerIndex: 1,
+    explanation:
+      'Daily revenue = 2,000/365 ≈ $5.5M. Collection period = 100 / 5.5 ≈ 18 days.',
+    difficulty: 'medium',
+    topic: 'Working capital ratios',
+  },
+  {
+    id: 'm2-m5',
+    moduleId: 2,
+    prompt:
+      'A firm has a 30-day collection period, 70 days in inventory, and a 50-day payable period. What is its cash conversion cycle?',
+    choices: ['150 days', '50 days', '90 days', '10 days'],
+    answerIndex: 1,
+    explanation:
+      'CCC = 30 + 70 − 50 = 50 days. Payables shorten the cycle because the firm is effectively borrowing from suppliers.',
+    difficulty: 'medium',
+    topic: 'Cash conversion cycle',
+  },
+  {
+    id: 'm2-m6',
+    moduleId: 2,
+    prompt:
+      'PepsiCo ends 2021 with ≈$6.0B of cash. The 2022 forecast shows a net change in cash of −$50M. What is forecast year-end 2022 cash?',
+    choices: ['≈ $5.95B', '≈ $6.05B', '≈ $3.1B', '≈ $50M'],
+    answerIndex: 0,
+    explanation:
+      'Cash is an accounting identity: Cashₜ = Cashₜ₋₁ + net change = 6.0B − 0.05B ≈ $5.95B. (It then falls to ≈$3.1B by 2023.)',
+    difficulty: 'medium',
+    topic: 'Forecasting',
+  },
+  {
+    id: 'm2-m7',
+    moduleId: 2,
+    prompt: 'In the cash flow statement, an increase in net working capital appears as:',
+    choices: [
+      'A positive cash flow (source of cash)',
+      'A negative cash flow (an investment that uses cash)',
+      'A financing inflow',
+      'It does not affect cash flow',
+    ],
+    answerIndex: 1,
+    explanation:
+      'Working capital is an investment in the business. Increasing it (more inventory/receivables) ties up cash — a negative operating cash flow, like CapEx.',
+    difficulty: 'medium',
+    topic: 'Working capital',
+  },
+  {
+    id: 'm2-m8',
+    moduleId: 2,
+    prompt:
+      'Receivables can typically be financed at a higher fraction than inventory. If a firm finances 80% of a $75M receivable, how much cash does it raise immediately?',
+    choices: ['$15M', '$37.5M', '$60M', '$75M'],
+    answerIndex: 2,
+    explanation:
+      '80% × $75M = $60M raised now; the 20% haircut ($15M) must be funded by the firm until the receivable is collected.',
+    difficulty: 'medium',
+    topic: 'Working capital financing',
+  },
+  {
+    id: 'm2-m9',
+    moduleId: 2,
+    prompt:
+      'A firm keeps a $100M credit line open at a commitment fee of 0.25% per year. What does it pay annually just to keep the line available?',
+    choices: ['$25M', '$2.5M', '$250,000', '$0 — commitment fees do not exist'],
+    answerIndex: 2,
+    explanation:
+      'Commitment fee = 0.25% × $100M = $250,000/year. Fees are typically 0.1%–0.3% — like an insurance premium for liquidity.',
+    difficulty: 'medium',
+    topic: 'Credit lines',
+  },
+  {
+    id: 'm2-m10',
+    moduleId: 2,
+    prompt:
+      'A firm must buy $69M of inventory each quarter and a bank finances 50% (a 50% haircut). How is the purchase funded?',
+    choices: [
+      '$69M borrowed, $0 own cash',
+      '$34.5M borrowed, $34.5M own cash',
+      '$13.8M borrowed, $55.2M own cash',
+      '$60M borrowed, $9M own cash',
+    ],
+    answerIndex: 1,
+    explanation:
+      'With a 50% haircut the firm borrows $34.5M and contributes $34.5M of its own cash — just like a mortgage loan-to-value.',
+    difficulty: 'medium',
+    topic: 'Working capital financing',
+  },
+  {
+    id: 'm2-m11',
+    moduleId: 2,
+    prompt:
+      'Why might a firm with very low liquidity ratios (like Altice) NOT actually face a liquidity problem?',
+    choices: [
+      'Low ratios always mean imminent bankruptcy',
+      'It can generate cash from profits and refinance (roll over) maturing debt, and it holds an undrawn credit line',
+      'Liquidity ratios are never relevant',
+      'Because it has no current liabilities',
+    ],
+    answerIndex: 1,
+    explanation:
+      'Balance-sheet liquidity is only part of the picture: operating cash flow funds expenses, maturing debt is usually refinanced, and an undrawn credit line (Altice: ~$1.6B) backstops a crisis.',
+    difficulty: 'medium',
+    topic: 'Liquidity risk',
+  },
+  {
+    id: 'm2-m12',
+    moduleId: 2,
+    prompt:
+      'Boeing\'s cash conversion cycle is ≈484 days while Walmart\'s is ≈6 days. What best explains the gap?',
+    choices: [
+      'Walmart is much less profitable',
+      'The nature of the business: Boeing holds huge inventory and waits long to be paid; Walmart sells fast and pays suppliers slowly',
+      'Boeing has no payables',
+      'Walmart factors all of its receivables',
+    ],
+    answerIndex: 1,
+    explanation:
+      'CCC depends on the business model. Aerospace requires enormous inventory and long sales/collection times; a retailer turns goods over in days and stretches payables, giving a tiny CCC.',
+    difficulty: 'medium',
+    topic: 'Cash conversion cycle',
+  },
+
+  // ─── HARD ────────────────────────────────────────────────
+  {
+    id: 'm2-h1',
+    moduleId: 2,
+    prompt:
+      'In the receivables example, a financing shock cuts the financeable fraction from 80% to 50%, and the firm has only $15M of internal cash. Sales fall from $75M to about $35.7M. What is the key lesson?',
+    choices: [
+      'Demand collapsed, so sales fell',
+      'A pure financing shock — not a demand shock — can force sales down via a multiplier: less financing → less production → lower sales → even less financing',
+      'The firm should immediately issue equity',
+      'Factoring always eliminates this risk',
+    ],
+    answerIndex: 1,
+    explanation:
+      'Demand is intact ($75M of buyers exist). Because the firm cannot fund its COGS, it produces and sells less; lower sales shrink the financeable base further — a self-reinforcing spiral driven purely by financing.',
+    difficulty: 'hard',
+    topic: 'Working capital shock',
+  },
+  {
+    id: 'm2-h2',
+    moduleId: 2,
+    prompt:
+      'The forecast shows PepsiCo CAN fund the expansion internally — cash stays positive (~$3.1B by 2023). Why might management still raise external financing?',
+    choices: [
+      'Because the model proves cash will go negative',
+      'The cash ratio falls sharply (≈23% → ≈12%), and some cash is trapped abroad, so managers may prefer to preserve their liquidity buffer',
+      'Because internal funds are illegal to use for CapEx',
+      'Because dividends must be cut to zero first',
+    ],
+    answerIndex: 1,
+    explanation:
+      'Having "enough" cash is not the whole story. Depleting reserves cuts the cash ratio from ~23% to ~12%, and multinational cash can be costly to repatriate — so a CFO may still issue debt to keep a liquidity cushion.',
+    difficulty: 'hard',
+    topic: 'Financial planning',
+  },
+  {
+    id: 'm2-h3',
+    moduleId: 2,
+    prompt:
+      'PepsiCo needs ~$2.9B in 2023. Drawing on Almeida & Weisbenner\'s crisis research (and the Avis/Budget episode), what is the prudent financing strategy?',
+    choices: [
+      'Always wait until the exact moment funds are needed to minimize interest',
+      'Consider issuing earlier and borrowing somewhat MORE than needed for precaution, holding the excess as cash — because refinancing may be impossible in a future crisis',
+      'Never borrow; only use internal cash',
+      'Borrow exactly $2.9B and not a dollar more',
+    ],
+    answerIndex: 1,
+    explanation:
+      'Waiting exposes the firm to rollover risk (Budget was forced to refinance in 2008 and was later absorbed by Avis). Issuing early and borrowing a precautionary buffer — held as cash — insures against bad future market conditions.',
+    difficulty: 'hard',
+    topic: 'Financing timing',
+  },
+  {
+    id: 'm2-h4',
+    moduleId: 2,
+    prompt:
+      'In the inventory example (sales $75M/qtr, COGS $69M, 50% financing), Q1 sales come in at $60M. The firm generates only $25.5M but needs $34.5M for next quarter\'s inventory. With no external cash, what happens?',
+    choices: [
+      'Nothing — the shortfall is irrelevant',
+      'It can only buy ~$51M of inventory, so Q2 sales fall to ~$55.4M even though demand is fine — the shock propagates',
+      'Sales automatically recover to $75M',
+      'The bank covers the entire shortfall for free',
+    ],
+    answerIndex: 1,
+    explanation:
+      'With $25.5M of own cash and 50% financing, it can fund only ~$51M of inventory (vs. $69M needed), so it cannot meet demand: Q2 sales drop to ~$55.4M. A temporary sales dip becomes a lasting cash crunch — mitigated by holding cash or a credit line.',
+    difficulty: 'hard',
+    topic: 'Working capital shock',
+  },
+
+  // ════════════════════════════════════════════════════════════
+  // MODULE 3 · Making Investment Decisions · 4 easy · 12 medium · 4 hard
+  // ════════════════════════════════════════════════════════════
+
+  // ─── EASY ────────────────────────────────────────────────
+  {
+    id: 'm3-e1',
+    moduleId: 3,
+    prompt: 'What is the Net Present Value (NPV) of a project?',
+    choices: [
+      'This year\'s accounting profit from the project',
+      'The sum of all incremental cash flows, today and in the future, discounted to the present',
+      'The undiscounted sum of all future cash flows',
+      'The project\'s payback period in years',
+    ],
+    answerIndex: 1,
+    explanation:
+      'NPV discounts every incremental ("new minus old") cash flow back to today and adds them up. Undiscounted sums and accounting profit ignore the time value of money.',
+    difficulty: 'easy',
+    topic: 'NPV',
+  },
+  {
+    id: 'm3-e2',
+    moduleId: 3,
+    prompt: 'According to the NPV decision rule, a firm should:',
+    choices: [
+      'Accept all projects with positive NPV and reject all with negative NPV',
+      'Accept the project with the highest IRR regardless of NPV',
+      'Accept any project that increases this year\'s EPS',
+      'Reject any project that requires upfront investment',
+    ],
+    answerIndex: 0,
+    explanation:
+      'Because NPV equals the change in shareholder wealth, accepting positive-NPV and rejecting negative-NPV projects is exactly equivalent to maximizing shareholder value.',
+    difficulty: 'easy',
+    topic: 'NPV decision rule',
+  },
+  {
+    id: 'm3-e3',
+    moduleId: 3,
+    prompt: 'The Internal Rate of Return (IRR) is defined as:',
+    choices: [
+      'The discount rate that makes NPV equal to zero',
+      'The average accounting return over the project life',
+      'The firm\'s cost of equity',
+      'The growth rate of the project\'s cash flows',
+    ],
+    answerIndex: 0,
+    explanation:
+      'IRR is the rate of return of an investment — mathematically, the discount rate at which the project\'s NPV is exactly zero.',
+    difficulty: 'easy',
+    topic: 'IRR',
+  },
+  {
+    id: 'm3-e4',
+    moduleId: 3,
+    prompt: 'Which expression is the "magic formula" for a project\'s free cash flow?',
+    choices: [
+      'Revenue − Net Income',
+      'Sales − Costs − Taxes − Investments',
+      'EBITDA − Depreciation',
+      'Cash In − Dividends',
+    ],
+    answerIndex: 1,
+    explanation:
+      'FCF = Sales − Costs − Taxes − Investments works under any tax code (only the tax line changes). Sales − Costs ≈ EBITDA; Investments include CapEx and working capital.',
+    difficulty: 'easy',
+    topic: 'Free cash flow',
+  },
+
+  // ─── MEDIUM ──────────────────────────────────────────────
+  {
+    id: 'm3-m1',
+    moduleId: 3,
+    prompt: 'What is the present value of $1,000,000 received in one year if the discount rate is 6%?',
+    choices: ['$1,060,000', '$943,396', '$1,000,000', '$16,666,667'],
+    answerIndex: 1,
+    explanation:
+      'PV = C / (1 + R)^T = 1,000,000 / 1.06 = $943,396. The $16,666,667 figure is the value of $1M received every year forever at 6%.',
+    difficulty: 'medium',
+    topic: 'Discounting',
+  },
+  {
+    id: 'm3-m2',
+    moduleId: 3,
+    prompt: 'What is the present value of $1,000,000 received every year forever (a perpetuity) at a 6% discount rate?',
+    choices: ['$6,000,000', '$16,666,667', '$943,396', '$1,000,000'],
+    answerIndex: 1,
+    explanation:
+      'Perpetuity PV = C / R = 1,000,000 / 0.06 = $16,666,667 (growth = 0 in the growing-perpetuity formula).',
+    difficulty: 'medium',
+    topic: 'Perpetuity',
+  },
+  {
+    id: 'm3-m3',
+    moduleId: 3,
+    prompt:
+      'Speeding up receivables generates +$82M today but −$20M every year forever. At a 10% discount rate, what is the NPV?',
+    choices: ['+$62M', '−$118M', '−$200M', '+$82M'],
+    answerIndex: 1,
+    explanation:
+      'NPV = 82 + (−20 / 0.10) = 82 − 200 = −$118M. The lost future cash flows ($200M PV) far exceed the $82M collected today, so the firm keeps the old system.',
+    difficulty: 'medium',
+    topic: 'NPV calculation',
+  },
+  {
+    id: 'm3-m4',
+    moduleId: 3,
+    prompt:
+      'When computing NPV in Excel, why must the date-0 cash flow be added OUTSIDE the NPV() function?',
+    choices: [
+      'Excel cannot handle negative numbers inside NPV()',
+      'Excel assumes the first cash flow in NPV() occurs one year out, so it would wrongly discount a date-0 flow',
+      'The date-0 flow must be discounted twice',
+      'It makes no difference where you put it',
+    ],
+    answerIndex: 1,
+    explanation:
+      'Excel\'s NPV() treats its first argument as occurring in one year. A date-0 flow happens today and must not be discounted, so use =CF0 + NPV(rate; CF1:CFn). (IRR(), by contrast, takes all flows including date 0.)',
+    difficulty: 'medium',
+    topic: 'NPV in Excel',
+  },
+  {
+    id: 'm3-m5',
+    moduleId: 3,
+    prompt:
+      'An investment costs $10,000 today and pays $500 next year, growing 4% forever. What is its IRR?',
+    choices: ['5%', '9%', '4%', '13%'],
+    answerIndex: 1,
+    explanation:
+      'Set NPV = 0: −10,000 + 500/(R − 0.04) = 0 → 500/(R − 0.04) = 10,000 → R − 0.04 = 0.05 → R = 9%.',
+    difficulty: 'medium',
+    topic: 'IRR calculation',
+  },
+  {
+    id: 'm3-m6',
+    moduleId: 3,
+    prompt:
+      'For the same project (−$10,000 then $500 growing 4% forever), what is the NPV at an 8% discount rate?',
+    choices: ['−$1,667', '+$2,500', '$0', '+$12,500'],
+    answerIndex: 1,
+    explanation:
+      'NPV = −10,000 + 500/(0.08 − 0.04) = −10,000 + 12,500 = +$2,500. Positive because the 8% benchmark is below the 9% IRR. (At 10% it would be −$1,667.)',
+    difficulty: 'medium',
+    topic: 'NPV vs IRR',
+  },
+  {
+    id: 'm3-m7',
+    moduleId: 3,
+    prompt: 'Using IRR to make a decision, a project is desirable when:',
+    choices: [
+      'Its IRR is below the discount rate',
+      'Its IRR exceeds the benchmark (discount rate)',
+      'Its IRR is exactly zero',
+      'Its IRR equals the inflation rate',
+    ],
+    answerIndex: 1,
+    explanation:
+      'Invest if IRR > discount rate. This is equivalent to NPV > 0 for conventional cash flows. A 9% IRR project is good only if the required return is below 9%.',
+    difficulty: 'medium',
+    topic: 'IRR decision rule',
+  },
+  {
+    id: 'm3-m8',
+    moduleId: 3,
+    prompt: 'For a conventional project, the relationship between NPV and IRR is:',
+    choices: [
+      'NPV > 0 if and only if IRR > the discount rate',
+      'NPV and IRR always give opposite recommendations',
+      'NPV > 0 only if IRR = 0',
+      'IRR > discount rate guarantees NPV < 0',
+    ],
+    answerIndex: 0,
+    explanation:
+      'On the NPV profile, NPV is positive exactly when the discount rate is below the IRR (where the curve crosses zero). The two rules agree — except for sign-flip or scale problems.',
+    difficulty: 'medium',
+    topic: 'NPV–IRR equivalence',
+  },
+  {
+    id: 'm3-m9',
+    moduleId: 3,
+    prompt:
+      'A machine is sold for $4,000 (salvage) at the end of its life. It is fully depreciated (cost basis 0) and the tax rate is 21%. What is the after-tax salvage value?',
+    choices: ['$4,000', '$3,160', '$840', '$3,360'],
+    answerIndex: 1,
+    explanation:
+      'With cost basis 0, the entire $4,000 is taxable: 4,000 × (1 − 0.21) = $3,160. This is the cash that enters the final-year free cash flow.',
+    difficulty: 'medium',
+    topic: 'After-tax salvage',
+  },
+  {
+    id: 'm3-m10',
+    moduleId: 3,
+    prompt:
+      'The machine project has NPV $15,880 / IRR 16.4% under pre-2018 accelerated depreciation and NPV $17,572 / IRR 18.8% under post-2018 full expensing. What does this show?',
+    choices: [
+      'Full expensing destroys value because depreciation disappears',
+      'Letting firms deduct 100% of CapEx in year 0 brings tax shields forward, raising both NPV and IRR',
+      'The two tax regimes always give identical NPV',
+      'IRR fell after 2018 while NPV rose',
+    ],
+    answerIndex: 1,
+    explanation:
+      'Full expensing creates a negative tax (a tax shield) in year 0 instead of spreading depreciation over five years. Earlier tax savings raise both NPV ($15,880 → $17,572) and IRR (16.4% → 18.8%).',
+    difficulty: 'medium',
+    topic: 'Depreciation & taxes',
+  },
+  {
+    id: 'm3-m11',
+    moduleId: 3,
+    prompt:
+      'Project A turns 1¢ into 2¢; Project B turns $100 into $200. Both have a 100% IRR and the benchmark is 10%. Which is the better single investment?',
+    choices: [
+      'Project A — the IRRs are equal so size is irrelevant',
+      'Project B — it has the same IRR but a far larger NPV (in dollars)',
+      'They are exactly equivalent',
+      'Neither — both have negative NPV',
+    ],
+    answerIndex: 1,
+    explanation:
+      'Both are positive-NPV (take both if you can), but IRR ignores scale. Only NPV, measured in dollars, captures that doubling $100 creates far more value than doubling a penny.',
+    difficulty: 'medium',
+    topic: 'IRR scale problem',
+  },
+  {
+    id: 'm3-m12',
+    moduleId: 3,
+    prompt:
+      'In the R&D case, if the drug succeeds the firm invests $1B and the present value of the resulting cash flows is $1,658M. What is the NPV conditional on success?',
+    choices: ['$1,658M', '$658M', '$1,000M', '−$342M'],
+    answerIndex: 1,
+    explanation:
+      'NPV | success = PV of cash flows − follow-on investment = 1,658 − 1,000 = $658M. This large upside is then weighted by the small 5% success probability and discounted for the lag.',
+    difficulty: 'medium',
+    topic: 'Real options / R&D',
+  },
+
+  // ─── HARD ────────────────────────────────────────────────
+  {
+    id: 'm3-h1',
+    moduleId: 3,
+    prompt:
+      'A project pays +$20M today and requires −$22M next year. Excel reports an IRR of 10%, yet the project is clearly bad. What is the lesson?',
+    choices: [
+      'Excel computed the IRR incorrectly',
+      'When a negative cash flow follows a positive one, IRR is unreliable/misleading — use NPV instead',
+      'A 10% IRR always means accept',
+      'The project is actually excellent',
+    ],
+    answerIndex: 1,
+    explanation:
+      'A positive-then-negative pattern is like borrowing: the "10%" does not represent a real return. The rule: if a negative cash flow follows a positive one, do not use IRR — rely on NPV.',
+    difficulty: 'hard',
+    topic: 'IRR pitfalls',
+  },
+  {
+    id: 'm3-h2',
+    moduleId: 3,
+    prompt:
+      'R&D costs $30M today; success probability is 5%; on success (after a 3-year lag) the NPV is $658M; the discount rate is 6%. What is the NPV of the R&D, and the decision?',
+    choices: [
+      '+$628M — invest',
+      '−$2.37M — do not invest, despite the $658M upside',
+      '+$658M — invest',
+      '−$30M — do not invest',
+    ],
+    answerIndex: 1,
+    explanation:
+      'NPV = −30 + 0.05 × 658 / 1.06³ = −30 + 27.63 = −$2.37M. The high failure risk and long lag outweigh a large conditional upside, so the project is rejected.',
+    difficulty: 'hard',
+    topic: 'R&D valuation',
+  },
+  {
+    id: 'm3-h3',
+    moduleId: 3,
+    prompt:
+      'After patent expiry the drug earns $20M/year forever starting in YEAR 11, at a 6% discount rate. How is this perpetuity valued back to today?',
+    choices: [
+      'Compute 20/0.06 = $333M and use it directly as the PV today',
+      'Compute 20/0.06 = $333M (a value as of year 10), then discount it 10 more years to today',
+      'Discount $20M by 11 years and stop',
+      'Multiply $20M by 11 years',
+    ],
+    answerIndex: 1,
+    explanation:
+      'The growing-perpetuity formula gives a value one period BEFORE the first cash flow. A flow starting in year 11 yields 20/0.06 = $333M as of year 10, which must then be discounted 10 years to the present (≈$186M).',
+    difficulty: 'hard',
+    topic: 'Perpetuity timing',
+  },
+  {
+    id: 'm3-h4',
+    moduleId: 3,
+    prompt:
+      'In the R&D model, raising the success probability from 5% to 10% (with a larger $1.2B follow-on and a $15M generic perpetuity) flips the NPV from −$2.37M to about +$4.56M. What is the key takeaway?',
+    choices: [
+      'NPV is independent of the success probability',
+      'R&D NPV is extremely sensitive to the probability and timing assumptions, so estimating them well is critical',
+      'R&D should always be accepted',
+      'The discount rate is the only thing that matters',
+    ],
+    answerIndex: 1,
+    explanation:
+      'A small change in the (hard-to-estimate) success probability and follow-on assumptions reverses the decision. Real-option/R&D valuations hinge on the quality of these probability estimates — "educated guesswork."',
+    difficulty: 'hard',
+    topic: 'Sensitivity analysis',
+  },
+
+  // ════════════════════ MODULE 4 ════════════════════
+  // M&A, Risk, and Performance Evaluation · 4 easy · 12 medium · 4 hard
+  // ─── EASY ────────────────────────────────────────────────
+  {
+    id: 'm4-e1',
+    moduleId: 4,
+    prompt: 'What is a "synergy" in an M&A deal?',
+    choices: [
+      'The cash the acquirer holds before the deal',
+      'The extra value created because the two firms are worth more together than apart',
+      'The fee paid to investment bankers',
+      'The premium paid to the acquirer\'s own shareholders',
+    ],
+    answerIndex: 1,
+    explanation:
+      'Synergy is the "2 + 2 = 5" idea — the value added by combining the firms. It equals the total NPV of the merger.',
+    difficulty: 'easy',
+    topic: 'Synergy',
+  },
+  {
+    id: 'm4-e2',
+    moduleId: 4,
+    prompt: 'Which is considered a BAD reason to engage in an M&A deal?',
+    choices: [
+      'Economies of scale',
+      'Market power',
+      'Acquiring a firm just because you have idle cash',
+      'Eliminating an inefficient management team',
+    ],
+    answerIndex: 2,
+    explanation:
+      'Spending idle cash is a classic bad motive: Harford found cash-rich acquirers destroy value. Scale, market power, and eliminating inefficiency are rational motives.',
+    difficulty: 'easy',
+    topic: 'M&A motives',
+  },
+  {
+    id: 'm4-e3',
+    moduleId: 4,
+    prompt: 'What does beta (β) measure?',
+    choices: [
+      'A company\'s book leverage',
+      'The risk of a company — how its returns move with the market',
+      'The dividend yield',
+      'The yield to maturity on the firm\'s bonds',
+    ],
+    answerIndex: 1,
+    explanation:
+      'Beta captures how a stock\'s returns co-move with the market. High beta = high risk (β > 1 amplifies market moves).',
+    difficulty: 'easy',
+    topic: 'Beta',
+  },
+  {
+    id: 'm4-e4',
+    moduleId: 4,
+    prompt: 'EVA (Economic Value Added) tells you whether a company or division…',
+    choices: [
+      'Has more cash than its competitors',
+      'Earns more than its cost of capital in a given year',
+      'Pays a dividend',
+      'Has a positive book value of equity',
+    ],
+    answerIndex: 1,
+    explanation:
+      'EVA = OPAT − WACC × Operating Assets. Positive EVA means the business generated real economic profit above the required return on its invested capital.',
+    difficulty: 'easy',
+    topic: 'EVA',
+  },
+
+  // ─── MEDIUM ──────────────────────────────────────────────
+  {
+    id: 'm4-m1',
+    moduleId: 4,
+    prompt: 'Why is buying a firm in a different industry to "diversify risk" a bad reason for M&A?',
+    choices: [
+      'Diversification is illegal',
+      'Shareholders can diversify on their own, more cheaply, via index funds',
+      'It always triggers antitrust review',
+      'It reduces the acquirer\'s cash',
+    ],
+    answerIndex: 1,
+    explanation:
+      'Managers should not diversify for shareholders, who already hold diversified portfolios. The modern trend is more focus and less conglomeration (e.g. GE breaking up).',
+    difficulty: 'medium',
+    topic: 'M&A motives',
+  },
+  {
+    id: 'm4-m2',
+    moduleId: 4,
+    prompt: 'In the HP–Compaq case, annual cost savings were $2.5B and the profit impact of the $4.1B revenue loss was ~$0.5B. With a 26% tax rate, what is the after-tax annual synergy cash flow?',
+    choices: ['$2.0B', '$1.48B', '$2.5B', '$0.5B'],
+    answerIndex: 1,
+    explanation:
+      'Pre-tax synergy = 2.5 − 0.5 = $2.0B. After tax: 2.0 × (1 − 0.26) = $1.48B.',
+    difficulty: 'medium',
+    topic: 'Synergy valuation',
+  },
+  {
+    id: 'm4-m3',
+    moduleId: 4,
+    prompt: 'The relationship between an acquirer\'s NPV, the synergy, and the premium is:',
+    choices: [
+      'NPV(acquirer) = Synergy + Premium',
+      'NPV(acquirer) = Synergy − Premium',
+      'NPV(acquirer) = Premium − Synergy',
+      'NPV(acquirer) = Synergy × Premium',
+    ],
+    answerIndex: 1,
+    explanation:
+      'The target captures the premium (NPV(target) = Premium); the acquirer keeps what is left, Synergy − Premium. The deal is positive-NPV for the acquirer if Synergy > Premium.',
+    difficulty: 'medium',
+    topic: 'Deal pricing',
+  },
+  {
+    id: 'm4-m4',
+    moduleId: 4,
+    prompt: 'What is the typical average premium paid for public targets in M&A?',
+    choices: ['About 5%', 'About 30%', 'About 70%', 'About 100%'],
+    answerIndex: 1,
+    explanation:
+      'The "magic number" is ~30%. Because of it, deals must generate large synergies just to be positive-NPV for the acquirer.',
+    difficulty: 'medium',
+    topic: 'Deal pricing',
+  },
+  {
+    id: 'm4-m5',
+    moduleId: 4,
+    prompt: 'On average, how do the stock prices of TARGETS and ACQUIRERS react to a merger announcement?',
+    choices: [
+      'Both rise ~20%',
+      'Targets rise ~20%; acquirers ≈ 0% on average',
+      'Both fall sharply',
+      'Targets ≈ 0%; acquirers rise ~20%',
+    ],
+    answerIndex: 1,
+    explanation:
+      'Research (unchanged over decades): targets earn a significant ~20% announcement return; acquirers are flat on average — they tend to transfer the synergy to the target via the premium.',
+    difficulty: 'medium',
+    topic: 'Market reaction',
+  },
+  {
+    id: 'm4-m6',
+    moduleId: 4,
+    prompt: 'Why can the yield to maturity (YTM) on a firm\'s long-term bonds be used to approximate the required return on debt?',
+    choices: [
+      'Because bonds never default',
+      'Because in market equilibrium a traded bond\'s NPV ≈ 0, so its expected return equals the required return',
+      'Because YTM is set by the government',
+      'Because the firm guarantees it',
+    ],
+    answerIndex: 1,
+    explanation:
+      'For a freely traded asset NPV ≈ 0; when NPV = 0, expected return = required return. So YTM ≈ required return on debt — valid only if the firm is far from bankruptcy.',
+    difficulty: 'medium',
+    topic: 'Required return on debt',
+  },
+  {
+    id: 'm4-m7',
+    moduleId: 4,
+    prompt: 'Why must we use the CAPM (not a yield to maturity) to estimate the required return on EQUITY?',
+    choices: [
+      'Equity is risk-free',
+      'Equity has no promised cash flows — it is a residual claim, so there is no YTM',
+      'Equity always pays a fixed dividend',
+      'The government sets the equity return',
+    ],
+    answerIndex: 1,
+    explanation:
+      'Shareholders receive whatever is left after debt is paid — there is no promised cash flow and thus no YTM. CAPM prices equity risk via beta and the market risk premium.',
+    difficulty: 'medium',
+    topic: 'CAPM',
+  },
+  {
+    id: 'm4-m8',
+    moduleId: 4,
+    prompt: 'Using CAPM with a risk-free rate of 3% and a market risk premium of 5%, what is the required return on equity for a firm with β = 1.0?',
+    choices: ['5%', '8%', '3%', '15%'],
+    answerIndex: 1,
+    explanation:
+      'r_E = R_f + β(R_m − R_f) = 3% + 1.0 × 5% = 8% — also the expected market return when β = 1.',
+    difficulty: 'medium',
+    topic: 'CAPM',
+  },
+  {
+    id: 'm4-m9',
+    moduleId: 4,
+    prompt: 'When computing leverage (D/V) for the WACC, which value of equity must you use?',
+    choices: [
+      'Book value of equity',
+      'Market value of equity',
+      'Par value of shares',
+      'Retained earnings',
+    ],
+    answerIndex: 1,
+    explanation:
+      'Always market value. Book equity ignores future value, overstates leverage, understates WACC, and could let you accept negative-NPV projects.',
+    difficulty: 'medium',
+    topic: 'WACC',
+  },
+  {
+    id: 'm4-m10',
+    moduleId: 4,
+    prompt: 'For EVA, why is OPAT (operating profit after taxes) used instead of Net Income?',
+    choices: [
+      'OPAT is always larger',
+      'We measure the whole business, so we use a profit measure BEFORE interest payments',
+      'Net Income is not reported',
+      'OPAT excludes taxes entirely',
+    ],
+    answerIndex: 1,
+    explanation:
+      'To evaluate the whole company/division you use operating profit (before interest), then subtract taxes. Net Income is after interest and reflects financing, not operating performance.',
+    difficulty: 'medium',
+    topic: 'EVA',
+  },
+  {
+    id: 'm4-m11',
+    moduleId: 4,
+    prompt: 'When computing "operating assets" for EVA, why is cash typically subtracted from total assets?',
+    choices: [
+      'Cash is not on the balance sheet',
+      'Cash is usually invested in financial assets (deposits, T-bonds), not the business itself',
+      'Cash is a liability',
+      'Cash is taxed twice',
+    ],
+    answerIndex: 1,
+    explanation:
+      'Operating assets = book assets − cash, because cash usually sits in financial assets rather than the operating business. (Exception: some firms need operating cash, e.g. a supermarket.)',
+    difficulty: 'medium',
+    topic: 'Operating assets',
+  },
+  {
+    id: 'm4-m12',
+    moduleId: 4,
+    prompt: 'In sensitivity analysis, the project NPV becomes negative under the worst-case sales scenario. What should you conclude?',
+    choices: [
+      'Reject the project immediately',
+      'Nothing dramatic — the expected-value NPV is unchanged; almost any project is negative under some assumption',
+      'The discount rate is wrong',
+      'Sales forecasts are useless',
+    ],
+    answerIndex: 1,
+    explanation:
+      'NPV uses the expected value, which is unchanged. Value creation requires taking risk, so NPV will always be negative under some scenario. Sensitivity analysis is for validating forecasts and planning, not for rejecting on the worst case.',
+    difficulty: 'medium',
+    topic: 'Sensitivity analysis',
+  },
+
+  // ─── HARD ────────────────────────────────────────────────
+  {
+    id: 'm4-h1',
+    moduleId: 4,
+    prompt: 'HP–Compaq: an after-tax synergy of $1.48B starts in 2004 and grows at 3%; the discount rate is 12%. Using the growing perpetuity, what is the synergy value as of 2001 (the announcement year)?',
+    choices: [
+      '$16.4B (no discounting)',
+      '~$13.1B (perpetuity value, then discounted two years)',
+      '$1.48B',
+      '$2.0B',
+    ],
+    answerIndex: 1,
+    explanation:
+      '1.48 / (0.12 − 0.03) = $16.4B, valued as of 2003 (one year before the 2004 flow). Discount two years to 2001: 16.4 / 1.12² ≈ $13.1B.',
+    difficulty: 'hard',
+    topic: 'Synergy valuation',
+  },
+  {
+    id: 'm4-h2',
+    moduleId: 4,
+    prompt: 'HP wants to offer $16 per Compaq share in a STOCK deal, using HP\'s pre-deal price of $23. What is the exchange ratio?',
+    choices: [
+      '1.44 HP shares per Compaq share',
+      '0.69 HP shares per Compaq share',
+      '0.63 HP shares per Compaq share',
+      '16 HP shares per Compaq share',
+    ],
+    answerIndex: 1,
+    explanation:
+      'Exchange ratio = offer per share / acquirer price = 16 / 23 ≈ 0.69. (The actual deal used 0.6325, derived from a ~30% premium.)',
+    difficulty: 'hard',
+    topic: 'Means of payment',
+  },
+  {
+    id: 'm4-h3',
+    moduleId: 4,
+    prompt: 'PepsiCo: r_E = 6%, r_D = 4%, tax = 21%, D = $40B, E = $240B. What is the WACC?',
+    choices: ['6.0%', '5.6%', '4.7%', '4.0%'],
+    answerIndex: 1,
+    explanation:
+      'V = 280, so E/V = 86%, D/V = 14%. WACC = 6%×0.86 + 4%×0.14×(1−0.21) = 5.16% + 0.44% ≈ 5.6%.',
+    difficulty: 'hard',
+    topic: 'WACC',
+  },
+  {
+    id: 'm4-h4',
+    moduleId: 4,
+    prompt: 'For Altria\'s wine division (Ste Michelle), why is using Altria\'s company beta of 0.5 the WRONG choice, and what is used instead?',
+    choices: [
+      'It is correct — use 0.5',
+      '0.5 is the tobacco beta (>95% of Altria); a wine beta (industry ≈0.82 or pure-play Constellation ≈1.07) is needed',
+      'Wine has no beta, so assume zero',
+      'Use the risk-free rate instead of beta',
+    ],
+    answerIndex: 1,
+    explanation:
+      'Altria\'s beta reflects tobacco, which dominates its value. The wine division needs its own beta — via an industry average (~0.82) or a pure-play (Constellation Brands ~1.07) — giving WACC ≈ 7.2% and EVA ≈ −$48M.',
+    difficulty: 'hard',
+    topic: 'Divisional cost of capital',
+  },
 ]
 
 export const questionsByModule = (moduleId: number) =>

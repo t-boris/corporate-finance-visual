@@ -4,6 +4,9 @@ import * as LucideIcons from 'lucide-react'
 import { ArrowLeft, Clock, ListChecks, Library } from 'lucide-react'
 import { moduleBySlug } from '@/data/modules'
 import { Module1Content, ModulePlaceholder } from '@/modules/Module1'
+import { Module2Content } from '@/modules/Module2'
+import { Module3Content } from '@/modules/Module3'
+import { Module4Content } from '@/modules/Module4'
 import { useProgress } from '@/store/progress'
 
 export function ModulePage() {
@@ -78,7 +81,17 @@ export function ModulePage() {
       </section>
 
       {/* ───── Body ───── */}
-      {mod.id === 1 ? <Module1Content /> : <ModulePlaceholder moduleId={mod.id} />}
+      {mod.id === 1 ? (
+        <Module1Content />
+      ) : mod.id === 2 ? (
+        <Module2Content />
+      ) : mod.id === 3 ? (
+        <Module3Content />
+      ) : mod.id === 4 ? (
+        <Module4Content />
+      ) : (
+        <ModulePlaceholder moduleId={mod.id} />
+      )}
     </div>
   )
 }

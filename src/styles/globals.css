@@ -123,4 +123,12 @@ body {
     background-size: 36px 36px;
     mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black, transparent 70%);
   }
+
+  /* Horizontal scroll container without a visible scrollbar (used by LessonRail). */
+  .no-scrollbar {
+    scrollbar-width: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
 }
