@@ -1242,6 +1242,283 @@ export const QUESTIONS: QuizQuestion[] = [
     difficulty: 'hard',
     topic: 'Divisional cost of capital',
   },
+
+  // ════════════ MODULE 5 · Capital Structure ════════════
+  // 20 questions. Difficulty mix: 4 easy · 12 medium · 4 hard.
+  // ─── EASY ────────────────────────────────────────────────
+  {
+    id: 'm5-e1',
+    moduleId: 5,
+    prompt: 'What is the central decision studied in Module 5?',
+    choices: [
+      'Which projects to accept (NPV ranking)',
+      'Whether to raise new financing with debt or equity, and in what proportion',
+      'How to value a merger synergy',
+      'How to forecast next year\'s sales',
+    ],
+    answerIndex: 1,
+    explanation:
+      'Module 5 is about raising financing — the capital structure decision: debt vs. equity and the optimal mix.',
+    difficulty: 'easy',
+    topic: 'Overview',
+  },
+  {
+    id: 'm5-e2',
+    moduleId: 5,
+    prompt: 'According to the pecking order, which source of financing do firms prefer FIRST?',
+    choices: ['External equity', 'Long-term bonds', 'Internal funds (own cash flows)', 'Bank loans'],
+    answerIndex: 2,
+    explanation:
+      'The pecking order is internal funds first, then debt, then external equity. Internal funds are the largest source in the data.',
+    difficulty: 'easy',
+    topic: 'Pecking order',
+  },
+  {
+    id: 'm5-e3',
+    moduleId: 5,
+    prompt: '"Dilution is an illusion" means that issuing equity at a fair price…',
+    choices: [
+      'always raises the stock price',
+      'does not change the stock price, because the cash received offsets the new shares',
+      'reduces the stock price in proportion to the new shares',
+      'has no effect on shares outstanding',
+    ],
+    answerIndex: 1,
+    explanation:
+      'Price = market value of equity / shares. Issuing at fair value raises both numerator (cash in) and denominator (new shares) proportionally, so the price is unchanged.',
+    difficulty: 'easy',
+    topic: 'Dilution',
+  },
+  {
+    id: 'm5-e4',
+    moduleId: 5,
+    prompt: 'Which profitability measure does the course say RISES when a profitable firm issues debt?',
+    choices: ['Net income', 'OPAT (operating profit after taxes)', 'Revenue', 'Earnings per share'],
+    answerIndex: 1,
+    explanation:
+      'Net income falls (more interest), but OPAT rises because deductible interest lowers taxes. The course measures profitability with OPAT.',
+    difficulty: 'easy',
+    topic: 'Leverage & taxes',
+  },
+
+  // ─── MEDIUM ──────────────────────────────────────────────
+  {
+    id: 'm5-m1',
+    moduleId: 5,
+    prompt: 'PepsiCo issues $7B of debt at a 4% interest rate. What is the new annual interest expense it adds?',
+    choices: ['$70M', '$280M', '$700M', '$28M'],
+    answerIndex: 1,
+    explanation: '$7,000M × 4% = $280M of additional interest per year.',
+    difficulty: 'medium',
+    topic: 'Mechanics of issuance',
+  },
+  {
+    id: 'm5-m2',
+    moduleId: 5,
+    prompt: 'PepsiCo raises $7B of equity at a share price of $173. Approximately how many new shares are issued?',
+    choices: ['4.05M', '40.46M', '404.6M', '1.21B'],
+    answerIndex: 1,
+    explanation: 'New shares = $7,000M / $173 ≈ 40.46M shares.',
+    difficulty: 'medium',
+    topic: 'Mechanics of issuance',
+  },
+  {
+    id: 'm5-m3',
+    moduleId: 5,
+    prompt: 'Under fair pricing / efficient markets, what is the NPV of issuing debt and the NPV of issuing equity?',
+    choices: [
+      'Debt NPV > 0; equity NPV < 0',
+      'Both are approximately zero',
+      'Both are strongly positive',
+      'Debt NPV = 0; equity NPV > 0',
+    ],
+    answerIndex: 1,
+    explanation:
+      'If securities are fairly priced, the cash raised exactly offsets the obligations (interest/principal) or the new shares, so both issuances have NPV ≈ 0.',
+    difficulty: 'medium',
+    topic: 'NPV of issuance',
+  },
+  {
+    id: 'm5-m4',
+    moduleId: 5,
+    prompt: 'Consider EBIT = $4,259M and current taxes = $681.8M. Using the course definition OPAT = EBIT − taxes, what is current OPAT?',
+    choices: ['$3,577.2M', '$4,259M', '$3,409.0M', '$2,727.2M'],
+    answerIndex: 0,
+    explanation: 'OPAT = 4,259 − 681.8 = $3,577.2M (FIN 570 uses taxes as reported, not re-grossed-up).',
+    difficulty: 'medium',
+    topic: 'OPAT',
+  },
+  {
+    id: 'm5-m5',
+    moduleId: 5,
+    prompt: 'A firm with EBIT = $4,259M and EBT-based taxes issues $12B of debt at 4%, raising interest from $850M to $1,330M; new EBT = $2,929M taxed at 20% = $585.8M. What is the new OPAT (= EBIT − taxes)?',
+    choices: ['$2,343.2M', '$3,577.2M', '$3,673.2M', '$2,583.1M'],
+    answerIndex: 2,
+    explanation: 'OPAT = 4,259 − 585.8 = $3,673.2M. OPAT rises after the debt issue because taxes fall.',
+    difficulty: 'medium',
+    topic: 'Leverage & taxes',
+  },
+  {
+    id: 'm5-m6',
+    moduleId: 5,
+    prompt: 'In the same example (EBT = $2,929M taxed at 20%), what is the new NET INCOME after the $12B debt issue?',
+    choices: ['$3,673.2M', '$2,343.2M', '$2,929.0M', '$3,577.2M'],
+    answerIndex: 1,
+    explanation: 'Net income = EBT − taxes = 2,929 − 585.8 = $2,343.2M. Net income falls even though OPAT rises.',
+    difficulty: 'medium',
+    topic: 'Net income vs OPAT',
+  },
+  {
+    id: 'm5-m7',
+    moduleId: 5,
+    prompt: 'Why is the "debt is cheaper than equity, so issue debt to lower WACC" argument an illusion?',
+    choices: [
+      'Because debt is actually more expensive than equity',
+      'Because raising leverage increases risk, so both the cost of debt and the cost of equity rise',
+      'Because the tax rate is zero',
+      'Because WACC ignores the cost of debt',
+    ],
+    answerIndex: 1,
+    explanation:
+      'As leverage rises, the firm gets riskier, so r_E and r_D both rise. The naïve calc holds them fixed; M&M shows the net effect on WACC is not a mechanical decline.',
+    difficulty: 'medium',
+    topic: 'M&M',
+  },
+  {
+    id: 'm5-m8',
+    moduleId: 5,
+    prompt: 'The Modigliani–Miller (no-tax) proposition states that, under ideal conditions, the firm\'s WACC…',
+    choices: [
+      'falls steadily as leverage rises',
+      'is independent of leverage (constant)',
+      'rises steadily as leverage rises',
+      'equals the cost of debt',
+    ],
+    answerIndex: 1,
+    explanation:
+      'M&M: with fairly priced securities and no frictions (incl. no interest tax deduction), WACC does not depend on leverage — r_E and r_D adjust to keep it constant.',
+    difficulty: 'medium',
+    topic: 'M&M',
+  },
+  {
+    id: 'm5-m9',
+    moduleId: 5,
+    prompt: 'Eckbo & Masulis (1995): what is the average stock-price reaction to a BOND issue vs an EQUITY issue?',
+    choices: [
+      'Both ≈ 0%',
+      'Bonds ≈ 0%; equity falls ≈ 1.5%–3%',
+      'Bonds fall ≈ 3%; equity ≈ 0%',
+      'Both rise ≈ 3%',
+    ],
+    answerIndex: 1,
+    explanation:
+      'Debt issuance has ≈ 0% reaction (consistent with M&M); equity issuance lowers the price by about 1.5%–3% on average — markets see it as bad news.',
+    difficulty: 'medium',
+    topic: 'Evidence from the field',
+  },
+  {
+    id: 'm5-m10',
+    moduleId: 5,
+    prompt: 'What is the main BENEFIT and the main COST of debt in the trade-off model?',
+    choices: [
+      'Benefit: lower interest; Cost: dividends',
+      'Benefit: interest tax shield; Cost: expected costs of financial distress',
+      'Benefit: dilution; Cost: higher taxes',
+      'Benefit: more shares; Cost: lower beta',
+    ],
+    answerIndex: 1,
+    explanation:
+      'Debt\'s benefit is the tax shield (deductible interest lowers taxes, raising OPAT/value); its cost is the rising expected cost of financial distress.',
+    difficulty: 'medium',
+    topic: 'Trade-off theory',
+  },
+  {
+    id: 'm5-m11',
+    moduleId: 5,
+    prompt: 'Andrade & Kaplan (1998) estimate the costs of financial distress (for highly leveraged firms that became distressed) at roughly…',
+    choices: ['1–2% of value', '10–25% of value', '50–60% of value', '0% — distress is costless'],
+    answerIndex: 1,
+    explanation: 'They find a value loss of about 10–25% relative to the year before distress — sizable, not trivial.',
+    difficulty: 'medium',
+    topic: 'Financial distress',
+  },
+  {
+    id: 'm5-m12',
+    moduleId: 5,
+    prompt: 'For the median U.S. firm, what is the optimal leverage ratio L*, and what is the value gain from moving from zero to L* (Korteweg)?',
+    choices: [
+      'L* ≈ 30%; value gain ≈ 5%',
+      'L* ≈ 70%; value gain ≈ 25%',
+      'L* ≈ 10%; value gain ≈ 50%',
+      'L* ≈ 0%; no value gain',
+    ],
+    answerIndex: 0,
+    explanation:
+      'Korteweg finds L* ≈ 30% (also the U.S. median) for the average firm, with a ≈ 5% value gain vs zero leverage.',
+    difficulty: 'medium',
+    topic: 'Trade-off theory',
+  },
+
+  // ─── HARD ────────────────────────────────────────────────
+  {
+    id: 'm5-h1',
+    moduleId: 5,
+    prompt: 'An all-equity firm is worth 45 today; in a boom equity is 50, in a bust 30. Adding 15 of debt, what are the equity returns in boom and bust (equity value today = 30)?',
+    choices: [
+      '+11% / −33% (unchanged)',
+      '+17% / −50%',
+      '+50% / −17%',
+      '+33% / −11%',
+    ],
+    answerIndex: 1,
+    explanation:
+      'With debt: boom equity = 35, bust = 15, today = 30. Returns = (35−30)/30 = +17% and (15−30)/30 = −50%. Leverage amplifies both swings → higher beta.',
+    difficulty: 'hard',
+    topic: 'Leverage & risk',
+  },
+  {
+    id: 'm5-h2',
+    moduleId: 5,
+    prompt: 'Ruth\'s 2020 SEO: equity value $262.2M, 27.6M shares ($9.50 price). It issues 5.6M new shares at $7.75. What is the MECHANICAL new stock price?',
+    choices: ['$9.50 (unchanged)', '$7.75', '≈ $9.2', '$7.50'],
+    answerIndex: 2,
+    explanation:
+      'P_new = (262.2 + 5.6×7.75) / (27.6 + 5.6) = (262.2 + 43.4)/33.2 ≈ $9.2. Selling below market causes a small mechanical drop (real dilution). The price actually fell further to $7.50 (signaling).',
+    difficulty: 'hard',
+    topic: 'Real dilution / SEO',
+  },
+  {
+    id: 'm5-h3',
+    moduleId: 5,
+    prompt: 'AMC 2021 "window of opportunity": fundamental value $15/share, 500M shares. It sells 11.55M shares at $50.85 ($587M raised). What happens to the FUNDAMENTAL stock price?',
+    choices: [
+      'Falls to about $12 (dilution)',
+      'Rises to about $15.81 (NPV>0 for existing holders)',
+      'Stays exactly $15',
+      'Rises to $50.85',
+    ],
+    answerIndex: 1,
+    explanation:
+      'P_new = (500M×$15 + $587M)/(500M + 11.55M) = ($7.5B + $0.587B)/511.55M ≈ $15.81. Selling overvalued shares raises fundamental value; new shareholders overpay, existing holders gain.',
+    difficulty: 'hard',
+    topic: 'Window of opportunity',
+  },
+  {
+    id: 'm5-h4',
+    moduleId: 5,
+    prompt: 'A young, unprofitable firm with volatile cash flows and few tangible assets is most likely to have an optimal leverage ratio that is…',
+    choices: [
+      'well above 30%, to capture tax shields',
+      'near zero / well below 30%',
+      'exactly 30%, like every firm',
+      'irrelevant — leverage never affects value',
+    ],
+    answerIndex: 1,
+    explanation:
+      'No profits → no tax benefit of debt; high volatility and low tangibility → high distress risk. So L* is well below 30%, possibly zero. L* differs across firms.',
+    difficulty: 'hard',
+    topic: 'Determinants of L*',
+  },
 ]
 
 export const questionsByModule = (moduleId: number) =>

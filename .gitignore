@@ -1,6 +1,7 @@
 node_modules
 dist
 dist-ssr
+dist_verify
 .DS_Store
 .env
 .env.local

@@ -77,9 +77,9 @@ export const MODULES: ModuleMeta[] = [
     shortTitle: 'Capital Structure',
     tagline: 'Debt vs. equity, MM, and the optimal mix',
     description:
-      'Modigliani–Miller, the tax shield, costs of financial distress, trade-off and pecking-order theories, signalling, and payout effects.',
-    status: 'planned',
-    topics: ['MM theorem', 'Tax shield', 'Trade-off & pecking order', 'WACC sensitivity'],
+      'Debt vs. equity issuance and the financial statements, why both are zero-NPV, the two misconceptions (dilution & "cheap debt") and Modigliani–Miller, the pecking order, the interest tax shield (OPAT), costs of financial distress, and the trade-off theory of optimal leverage.',
+    status: 'ready',
+    topics: ['Debt vs. equity issuance', 'Modigliani–Miller', 'Pecking order', 'Tax shield & OPAT', 'Trade-off theory & L*'],
     estimatedMinutes: 100,
     accent: '#8b5cf6',
     icon: 'Layers',

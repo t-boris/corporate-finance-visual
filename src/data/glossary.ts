@@ -1176,6 +1176,254 @@ export const GLOSSARY: GlossaryTerm[] = [
     related: ['Industry Beta', 'Pure-play Approach', 'EVA (Economic Value Added)'],
     tags: ['performance'],
   },
+
+  // ───── Module 5 · Raising Financing: The Capital Structure Decision ─────
+  {
+    term: 'Capital Structure',
+    moduleId: 5,
+    definition:
+      'The mix of debt and equity a firm uses to finance its assets. The central decision of Module 5: should the firm raise new financing by issuing debt or equity, and what is the optimal proportion?',
+    related: ['Leverage', 'Debt Financing', 'Equity Financing', 'Trade-off Theory'],
+    tags: ['capital-structure'],
+  },
+  {
+    term: 'Debt Financing',
+    moduleId: 5,
+    definition:
+      'Raising cash now (bank loan or public bond) in exchange for fixed interest payments and repayment of principal. Adds interest expense to the income statement and a net-borrowing inflow to the cash flow statement.',
+    formula: 'New interest = Debt × interest rate (e.g. $7B × 4% = $280M)',
+    related: ['Equity Financing', 'Interest Tax Shield', 'Yield to Maturity'],
+    tags: ['capital-structure'],
+  },
+  {
+    term: 'Equity Financing',
+    moduleId: 5,
+    definition:
+      'Raising cash by selling new shares; buyers become co-owners and no fixed payment is promised. Does not change the income statement; increases shares outstanding and adds a stock-issuance inflow to financing cash flows.',
+    formula: 'New shares = Amount raised / Share price (e.g. $7B / $173 ≈ 40.46M)',
+    related: ['Debt Financing', 'Dilution', 'Seasoned Equity Offering (SEO)'],
+    tags: ['capital-structure'],
+  },
+  {
+    term: 'Leverage',
+    moduleId: 5,
+    definition:
+      'The degree to which a firm is financed by debt, measured as D/V (debt over firm value, using the MARKET value of equity). U.S. median leverage ≈ 30%.',
+    formula: 'L = D / V, with V = D + market value of equity',
+    related: ['Capital Structure', 'Optimal Leverage (L*)', 'Leverage Amplifies Risk'],
+    tags: ['capital-structure'],
+  },
+  {
+    term: 'NPV of Issuance',
+    moduleId: 5,
+    definition:
+      'The net present value of issuing a security. Under efficient markets / fair pricing, both debt and equity issuance have NPV ≈ 0: the cash received exactly offsets the present value of the obligations (interest/principal) or the new shares.',
+    formula: 'NPV_debt = +Proceeds − PV(interest + principal) = 0 (if fairly priced)',
+    related: ['Efficient Markets', 'Debt Financing', 'Equity Financing'],
+    tags: ['capital-structure'],
+  },
+  {
+    term: 'Incremental Cash Flow (financing)',
+    moduleId: 5,
+    definition:
+      'Only cash flows that change with a decision matter. The NPV of the underlying investment is the SAME whether funded by debt or equity, so it is non-incremental to the debt-vs-equity choice and can be ignored.',
+    related: ['NPV of Issuance', 'Debt Financing', 'Equity Financing'],
+    tags: ['capital-structure'],
+  },
+  {
+    term: 'Dilution',
+    moduleId: 5,
+    definition:
+      'The claim that issuing equity lowers the stock price because shares outstanding rise. "Dilution is an illusion": the firm also receives cash, so market value of equity rises proportionally and the price is unchanged — IF shares are sold at the fair price.',
+    formula: 'P = Market value of equity / Shares (numerator and denominator both rise)',
+    related: ['Real Dilution', 'Equity Financing', 'Efficient Markets'],
+    tags: ['capital-structure'],
+  },
+  {
+    term: 'Real Dilution',
+    moduleId: 5,
+    definition:
+      'Genuine value transfer that occurs when new shares are sold BELOW the market price. Existing holders lose because the cash raised does not fully offset the new shares. Example: Ruth\'s 2020 SEO priced at $7.75 vs a $9.50 market price → mechanical price drop to $9.2.',
+    formula: 'P_new = (old equity value + cash raised) / (old + new shares)',
+    related: ['Dilution', 'Seasoned Equity Offering (SEO)', 'Signaling'],
+    tags: ['capital-structure'],
+  },
+  {
+    term: 'Cost-of-Capital Illusion',
+    moduleId: 5,
+    definition:
+      'The mistaken argument that because after-tax debt (3.2%) is cheaper than equity (6%), issuing debt mechanically lowers WACC. Wrong because raising leverage raises BOTH the required return on debt and on equity (risk rises).',
+    formula: 'Naïve: WACC 5.6% → 4.9% at L=40% (holding r_E, r_D fixed) — incorrect',
+    related: ['Modigliani–Miller (M&M)', 'WACC', 'Leverage Amplifies Risk'],
+    tags: ['capital-structure'],
+  },
+  {
+    term: 'Leverage Amplifies Risk',
+    moduleId: 5,
+    definition:
+      'Debt magnifies the percentage swings in equity value: with debt, gains in a boom and losses in a bust are both larger. Greater fluctuation = more systematic risk, so beta and the required return on equity rise with leverage.',
+    formula: 'All-equity: +11% / −33%; with debt: +17% / −50%',
+    related: ['Beta', 'Modigliani–Miller (M&M)', 'Cost-of-Capital Illusion'],
+    tags: ['capital-structure'],
+  },
+  {
+    term: 'Modigliani–Miller (M&M)',
+    moduleId: 5,
+    definition:
+      'Nobel-winning result (1958): under ideal conditions the firm\'s cost of capital (WACC) is INDEPENDENT of leverage. As leverage rises, r_E and r_D rise just enough to keep WACC constant. Conditions: securities fairly priced (NPV=0) and no frictions such as the interest tax deduction.',
+    formula: 'WACC constant (e.g. 5.6%) regardless of L (no-tax M&M)',
+    related: ['WACC', 'Cost-of-Capital Illusion', 'Interest Tax Shield'],
+    tags: ['capital-structure'],
+  },
+  {
+    term: 'Yield to Maturity',
+    moduleId: 5,
+    definition:
+      "A bond's internal rate of return if held to maturity; also the expected return on the bond and the correct discount rate for valuing the debt issuance (4% in the PepsiCo example).",
+    related: ['Debt Financing', 'NPV of Issuance'],
+    tags: ['capital-structure'],
+  },
+  {
+    term: 'Pecking Order',
+    moduleId: 5,
+    definition:
+      'The order in which firms prefer to finance investment: internal funds first, then debt, and external equity last. Internal funds are the largest source in the data; aggregate net equity issuance is negative almost every year (firms repurchase more than they issue).',
+    related: ['Equity Financing', 'Debt Financing', 'Seasoned Equity Offering (SEO)'],
+    tags: ['capital-structure'],
+  },
+  {
+    term: 'Equity Issuance Price Reaction',
+    moduleId: 5,
+    definition:
+      'Stylized fact (Eckbo & Masulis 1995): announcing a bond issue moves the stock price ≈ 0%, but announcing an equity issue lowers it on average by 1.5%–3%. Markets read equity issuance as bad news, so firms are reluctant to issue equity.',
+    related: ['Pecking Order', 'Signaling', 'Seasoned Equity Offering (SEO)'],
+    tags: ['capital-structure'],
+  },
+  {
+    term: 'OPAT',
+    moduleId: 5,
+    definition:
+      'Operating Profit After Taxes — profit to all capital providers (before interest). In FIN 570 it is EBIT minus taxes AS REPORTED (on the post-interest tax base), NOT re-grossed-up. OPAT RISES with leverage because interest is tax-deductible and taxes fall.',
+    formula: 'OPAT = EBIT − Taxes (as reported)',
+    related: ['Interest Tax Shield', 'Net Income vs OPAT', 'Leverage'],
+    tags: ['capital-structure'],
+  },
+  {
+    term: 'Interest Tax Shield',
+    moduleId: 5,
+    definition:
+      'The tax saving from deductible interest. Issuing debt lowers taxable income, so the firm pays fewer taxes — effectively "taking money from the government." This is the main benefit of debt and the upward-sloping part of the trade-off model.',
+    formula: 'Tax saving ≈ T × Interest (e.g. 21% × $280M)',
+    related: ['OPAT', 'Trade-off Theory', 'Modigliani–Miller (M&M)'],
+    tags: ['capital-structure'],
+  },
+  {
+    term: 'Net Income vs OPAT',
+    moduleId: 5,
+    definition:
+      'After a debt issue, net income (profit to shareholders, after interest) FALLS because interest rises, but OPAT (profit to all capital, before interest) RISES because taxes fall. The course measures profitability with OPAT.',
+    related: ['OPAT', 'Interest Tax Shield'],
+    tags: ['capital-structure'],
+  },
+  {
+    term: 'Financial Distress',
+    moduleId: 5,
+    definition:
+      'A high-leverage situation where the firm struggles to cover interest/debt obligations from operating income and is forced into costly actions. Usually triggered by poor performance, not by voluntarily over-borrowing. Far more common than outright bankruptcy.',
+    related: ['Costs of Financial Distress', 'Bankruptcy', 'Leverage'],
+    tags: ['capital-structure'],
+  },
+  {
+    term: 'Costs of Financial Distress',
+    moduleId: 5,
+    definition:
+      'The value loss when high leverage forces costly refinancing (at high rates), distressed equity issuance (large price drops), or cuts to dividends/positive-NPV investments. Estimated at 10–25% of firm value (Andrade & Kaplan 1998). This is the main cost of debt.',
+    related: ['Financial Distress', 'Trade-off Theory', 'Bankruptcy'],
+    tags: ['capital-structure'],
+  },
+  {
+    term: 'Bankruptcy',
+    moduleId: 5,
+    definition:
+      'The extreme form of distress: the firm cannot repay its liabilities and goes to court to liquidate or reorganize. Distress (and its costs) arise well before outright bankruptcy.',
+    related: ['Financial Distress', 'Costs of Financial Distress'],
+    tags: ['capital-structure'],
+  },
+  {
+    term: 'Trade-off Theory',
+    moduleId: 5,
+    definition:
+      'Optimal leverage balances the tax benefit of debt (raises value) against the expected costs of financial distress (lowers value). The value-maximizing leverage is L*. It also minimizes the WACC.',
+    formula: 'V_L = V_U + PV(tax shield) − PV(distress costs)',
+    related: ['Optimal Leverage (L*)', 'Interest Tax Shield', 'Costs of Financial Distress'],
+    tags: ['capital-structure'],
+  },
+  {
+    term: 'Optimal Leverage (L*)',
+    moduleId: 5,
+    definition:
+      'The leverage ratio that maximizes firm value (and minimizes WACC). For the median U.S. firm L* ≈ 30%; moving from zero to optimal leverage adds ≈ 5% of value (Korteweg). Unprofitable firms can have L* near zero.',
+    formula: 'L* ≈ 30% for the median firm; value gain ≈ 5%',
+    related: ['Trade-off Theory', 'Leverage', 'Determinants of Optimal Leverage'],
+    tags: ['capital-structure'],
+  },
+  {
+    term: 'Determinants of Optimal Leverage',
+    moduleId: 5,
+    definition:
+      'Firm characteristics that shift L*: higher cash-flow volatility → less debt; more collateral/tangibility → more debt; larger size → more debt; higher profitability → more debt; higher market-to-book/growth → less debt. Credit ratings summarize these.',
+    related: ['Optimal Leverage (L*)', 'Trade-off Theory', 'Collateral'],
+    tags: ['capital-structure'],
+  },
+  {
+    term: 'Collateral',
+    moduleId: 5,
+    definition:
+      'Tangible assets (land, real estate, equipment) that can be sold if the firm fails. More collateral lowers credit and distress risk, raising optimal leverage.',
+    related: ['Determinants of Optimal Leverage', 'Costs of Financial Distress'],
+    tags: ['capital-structure'],
+  },
+  {
+    term: 'Seasoned Equity Offering (SEO)',
+    moduleId: 5,
+    definition:
+      'A sale of new shares by an already-public company. An underwriter (e.g. Jefferies for Ruth\'s) gives a firm commitment to buy at a fixed, discounted price, then places shares in the market. Two motives: necessity (Ruth\'s 2020) and opportunity (AMC 2021).',
+    related: ['Equity Financing', 'Real Dilution', 'Window of Opportunity', 'Underwriter'],
+    tags: ['capital-structure'],
+  },
+  {
+    term: 'Underwriter',
+    moduleId: 5,
+    definition:
+      'The investment bank that buys an SEO under a "firm commitment" at a fixed price and resells shares to investors. It prices shares at a discount because it expects the price to drop once the market learns of the issuance.',
+    related: ['Seasoned Equity Offering (SEO)', 'Real Dilution'],
+    tags: ['capital-structure'],
+  },
+  {
+    term: 'Window of Opportunity',
+    moduleId: 5,
+    definition:
+      'Issuing equity to exploit overvaluation (price above fundamental value), e.g. AMC in 2021 selling shares at $50.85 when fundamental value was ~$15. The fundamental price rises (NPV>0 for existing holders); new shareholders overpay.',
+    formula: 'AMC P_new = ($7.5B + $587M)/(500M + 11.55M) ≈ $15.81',
+    related: ['Seasoned Equity Offering (SEO)', 'Signaling', 'Efficient Markets'],
+    tags: ['capital-structure'],
+  },
+  {
+    term: 'Signaling',
+    moduleId: 5,
+    definition:
+      'Because managers know more than investors, the act of issuing equity conveys information. Issuing tends to signal that managers think the stock is (fairly or over) valued, so the market lowers the price on announcement.',
+    related: ['Equity Issuance Price Reaction', 'Real Dilution', 'Pecking Order'],
+    tags: ['capital-structure'],
+  },
+  {
+    term: 'Leveraged Buyout (LBO)',
+    moduleId: 5,
+    definition:
+      'Acquisition financed largely with debt. High post-deal leverage raises distress risk — illustrated by Red Lobster (bought by a PE fund in 2014), a cautionary example for the costs of financial distress.',
+    related: ['Leverage', 'Costs of Financial Distress', 'Financial Distress'],
+    tags: ['capital-structure'],
+  },
 ]
 
 export const allModuleIds = Array.from(new Set(GLOSSARY.map((g) => g.moduleId))).sort()
