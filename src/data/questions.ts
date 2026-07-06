@@ -1519,6 +1519,635 @@ export const QUESTIONS: QuizQuestion[] = [
     difficulty: 'hard',
     topic: 'Determinants of L*',
   },
+
+  // ═══════════════ MODULE 6 · Debt Financing & Payout Policy ═══════════════
+  // 4 easy · 12 medium · 4 hard
+  // ─── EASY ────────────────────────────────────────────────
+  {
+    id: 'm6-e1',
+    moduleId: 6,
+    prompt: 'Module 6 pairs debt financing with its "mirror image." What is that mirror image?',
+    choices: [
+      'Capital budgeting (NPV)',
+      'Payout policy — returning cash via dividends and repurchases',
+      'Working capital management',
+      'Mergers and acquisitions',
+    ],
+    answerIndex: 1,
+    explanation:
+      'Raising cash from investors has a mirror image: paying it back. Module 6 pairs debt financing with payout policy (dividends and share repurchases).',
+    difficulty: 'easy',
+    topic: 'Overview',
+  },
+  {
+    id: 'm6-e2',
+    moduleId: 6,
+    prompt: 'Which statement about yield to maturity (YTM) and the cost of debt (r_D) is correct?',
+    choices: [
+      'They are always equal',
+      'YTM is the promised return (paid only if no default); r_D is the lower expected return',
+      'r_D is always higher than YTM',
+      'YTM is the figure used directly in the WACC',
+    ],
+    answerIndex: 1,
+    explanation:
+      'YTM is the promised return paid only if the firm does not default; r_D is the expected return after accounting for default risk, and r_D (not YTM) is what goes into the WACC.',
+    difficulty: 'easy',
+    topic: 'Cost of debt',
+  },
+  {
+    id: 'm6-e3',
+    moduleId: 6,
+    prompt: 'On the S&P scale, what is the lowest investment-grade rating?',
+    choices: ['AAA', 'A−', 'BBB−', 'BB+'],
+    answerIndex: 2,
+    explanation:
+      'BBB− is the last investment-grade rating. A drop to BB+ moves the issuer into junk (speculative) grade — a particularly costly downgrade.',
+    difficulty: 'easy',
+    topic: 'Credit ratings',
+  },
+  {
+    id: 'm6-e4',
+    moduleId: 6,
+    prompt: 'A firm buys back shares at the market price. By "dilution is an illusion," what happens to the stock price purely from the buyback?',
+    choices: [
+      'It rises because shares outstanding fall',
+      'It is unchanged — the cash spent offsets the fewer shares (NPV = 0)',
+      'It falls because cash leaves the firm',
+      'It rises because EPS goes up',
+    ],
+    answerIndex: 1,
+    explanation:
+      'A buyback reduces shares but also spends cash; at the market price these exactly offset, so the price is unchanged and NPV = 0 — the mirror of the equity-issuance dilution illusion.',
+    difficulty: 'easy',
+    topic: 'Dilution',
+  },
+
+  // ─── MEDIUM ──────────────────────────────────────────────
+  {
+    id: 'm6-m1',
+    moduleId: 6,
+    prompt: 'A BBB bond has YTM = 4%, annual default probability = 0.5%, and recovery rate = 40%. What is the expected return (cost of debt)?',
+    choices: ['4%', '3.7%', '3.0%', '3.5%'],
+    answerIndex: 1,
+    explanation:
+      'r_D = 4%×99.5% + (−60%)×0.5% = 3.98% − 0.30% = 3.7%. The investor earns 4% if paid and −60% (recovery 40%) on default.',
+    difficulty: 'medium',
+    topic: 'Cost of debt',
+  },
+  {
+    id: 'm6-m2',
+    moduleId: 6,
+    prompt: 'A senior unsecured bond pays 7% interest, has a 3.5% annual default probability, and a 40% recovery rate. What expected annual return do investors face?',
+    choices: ['7%', '4.65%', '3.5%', '5.5%'],
+    answerIndex: 1,
+    explanation:
+      'r_D = 7%×96.5% − 60%×3.5% = 6.755% − 2.10% = 4.65%.',
+    difficulty: 'medium',
+    topic: 'Cost of debt',
+  },
+  {
+    id: 'm6-m3',
+    moduleId: 6,
+    prompt: 'A bond\'s default probability rises from 0.5% to 0.75% per year, but investors still require the same 3.7% expected return. What happens to the YTM?',
+    choices: [
+      'It decreases',
+      'It is unchanged',
+      'It increases (to ~4.2%) to compensate for the higher default risk',
+      'The recovery rate falls instead',
+    ],
+    answerIndex: 2,
+    explanation:
+      'To keep the same expected return with a higher default probability, the promised yield must rise: r_D = YTM×99.25% − 60%×0.75% = 3.7% → YTM ≈ 4.2%.',
+    difficulty: 'medium',
+    topic: 'Cost of debt',
+  },
+  {
+    id: 'm6-m4',
+    moduleId: 6,
+    prompt: 'How do historical recovery rates compare?',
+    choices: [
+      'Senior unsecured bonds recover more than secured bank debt',
+      'Secured bank debt (>80%) recovers more than senior unsecured bonds (~40%)',
+      'They are equal at ~60%',
+      'Commercial paper recovers more than secured bank debt',
+    ],
+    answerIndex: 1,
+    explanation:
+      'Secured bank debt recovers above 80% because the lender has priority over collateral; senior unsecured bonds recover ~40% because they go through the bankruptcy process behind secured claims.',
+    difficulty: 'medium',
+    topic: 'Bank vs. market',
+  },
+  {
+    id: 'm6-m5',
+    moduleId: 6,
+    prompt: 'In Walmart\'s debt structure, which is the LARGEST source of debt?',
+    choices: ['Commercial paper', 'Bonds (~62%)', 'Term loans', 'Drawn revolving credit'],
+    answerIndex: 1,
+    explanation:
+      'Bonds are ~62% of Walmart\'s debt. Commercial paper is ~8%, revolving credit is zero, and Walmart uses no term loans — it relies on bonds and leases for long-term financing.',
+    difficulty: 'medium',
+    topic: 'Types of debt',
+  },
+  {
+    id: 'm6-m6',
+    moduleId: 6,
+    prompt: 'PepsiCo has ~15% leverage and an A+ credit rating. What does the rating imply about its capital structure?',
+    choices: [
+      'It is overlevered and should issue equity',
+      'It is roughly at its optimum',
+      'It is likely underlevered and could issue more debt without reducing value',
+      'Its rating is inconsistent with its leverage',
+    ],
+    answerIndex: 2,
+    explanation:
+      'A high rating (A+) at low leverage (15% vs the ~30% median, which maps to BBB) signals PepsiCo is underlevered; it can likely issue more debt without losing value, perhaps even gaining some.',
+    difficulty: 'medium',
+    topic: 'Ratings & leverage',
+  },
+  {
+    id: 'm6-m7',
+    moduleId: 6,
+    prompt: 'Twitter has ~17% leverage but a BB+ (junk) rating, while a typical firm at 17% would be rated A. What is the right read?',
+    choices: [
+      'Twitter is underlevered, just like PepsiCo',
+      'Twitter is probably overlevered — the rating captures risk beyond leverage',
+      'The rating must be a mistake',
+      'Leverage is the only thing that matters',
+    ],
+    answerIndex: 1,
+    explanation:
+      'As a growth firm with low current profits, Twitter is high credit risk even at low leverage. The junk rating signals it is probably overlevered, with an optimal leverage below 17%.',
+    difficulty: 'medium',
+    topic: 'Ratings & leverage',
+  },
+  {
+    id: 'm6-m8',
+    moduleId: 6,
+    prompt: 'Why do small, young firms like Pricemark rely on bank loans rather than bonds?',
+    choices: [
+      'Banks always charge lower rates than bonds',
+      'Bonds carry fixed issuance costs (SEC registration, underwriting, a rating) and banks offer secured, covenant-based lending suited to riskier borrowers',
+      'Bonds are illegal for small firms',
+      'Banks never require collateral',
+    ],
+    answerIndex: 1,
+    explanation:
+      'Fixed bond-issuance costs hurt small issuers, and bank debt is secured with covenants — appropriate for a small, riskier firm that might not even be able to place a bond.',
+    difficulty: 'medium',
+    topic: 'Bank vs. market',
+  },
+  {
+    id: 'm6-m9',
+    moduleId: 6,
+    prompt: 'A firm has net income 2,500 and 1,000 shares (EPS = 2.50). It repurchases 40 shares at $60; lost interest on cash cuts net income to 2,450. What is the new EPS?',
+    choices: ['2.50', '2.55', '2.26', '2.80'],
+    answerIndex: 1,
+    explanation:
+      'Shares fall to 960 and net income is 2,450, so EPS = 2,450 / 960 = 2.55. Buybacks tend to raise EPS mechanically.',
+    difficulty: 'medium',
+    topic: 'EPS management',
+  },
+  {
+    id: 'm6-m10',
+    moduleId: 6,
+    prompt: 'A company with a $60 stock and 250M shares repurchases 10M shares at the market price. What is the best statement about the stock price?',
+    choices: [
+      'It rises because there are fewer shares',
+      'It will probably rise — markets tend to respond positively to buybacks (signaling), not because of dilution',
+      'It falls because the firm spent $600M of cash',
+      'It rises because EPS goes up',
+    ],
+    answerIndex: 1,
+    explanation:
+      'Share count alone does not move price (dilution is an illusion). Prices do tend to rise after buybacks, but because of the positive signal — not arithmetic or EPS.',
+    difficulty: 'medium',
+    topic: 'Payout & value',
+  },
+  {
+    id: 'm6-m11',
+    moduleId: 6,
+    prompt: 'On taxes, how do repurchases generally compare with dividends for investors?',
+    choices: [
+      'Dividends are more tax-efficient',
+      'Repurchases are generally more tax-efficient — only sellers are taxed, and only on the gain above cost basis',
+      'Both are always untaxed',
+      'Repurchases are taxed at 100%',
+    ],
+    answerIndex: 1,
+    explanation:
+      'A dividend forces all holders to pay tax (~20%); a buyback taxes only investors who choose to sell, and only on the gain above cost basis — giving repurchases a tax advantage.',
+    difficulty: 'medium',
+    topic: 'Dividends vs. repurchases',
+  },
+  {
+    id: 'm6-m12',
+    moduleId: 6,
+    prompt: 'What is the "cash management" argument for paying out cash?',
+    choices: [
+      'Cash on the balance sheet earns too much interest',
+      'Excess cash tends to fund value-destroying acquisitions (~$0.07 destroyed per $1), so payout imposes discipline',
+      'Paying out cash lowers the firm\'s taxes',
+      'Holding cash is illegal',
+    ],
+    answerIndex: 1,
+    explanation:
+      'Cash-rich firms are more likely to make value-destroying acquisitions; each dollar of excess cash destroys ~$0.07 of value. Dividends/buybacks curb this overspending (the free-cash-flow problem).',
+    difficulty: 'medium',
+    topic: 'Payout drivers',
+  },
+
+  // ─── HARD ────────────────────────────────────────────────
+  {
+    id: 'm6-h1',
+    moduleId: 6,
+    prompt: 'Bondholders demand a 4.65% expected return. For a bank loan with an 80% recovery rate and the same 3.5% default probability, what interest rate (YTM) delivers that expected return?',
+    choices: ['7%', '~5.5%', '4.65%', '6.3%'],
+    answerIndex: 1,
+    explanation:
+      'Set 4.65% = YTM×96.5% − 20%×3.5% (recovery 80% → −20% on default). YTM×0.965 = 4.65% + 0.70% = 5.35% → YTM ≈ 5.5%. Higher recovery lets the bank charge a lower rate for the same expected return.',
+    difficulty: 'hard',
+    topic: 'Bank vs. market',
+  },
+  {
+    id: 'm6-h2',
+    moduleId: 6,
+    prompt: 'A firm\'s 10-year bond yields 5.7% and it is rated BB. Which statement is INCORRECT?',
+    choices: [
+      'You could use the 5.7% YTM directly as the cost of debt without adjusting for credit risk',
+      'The cost of debt is likely below 5.7%',
+      'You need the default probability to estimate the cost of debt',
+      'Investors earn 5.7% only if the firm does not default',
+    ],
+    answerIndex: 0,
+    explanation:
+      'For a junk-rated issuer the YTM overstates the cost of debt, so using 5.7% directly is incorrect. You must adjust for default risk, which requires the default probability.',
+    difficulty: 'hard',
+    topic: 'Cost of debt',
+  },
+  {
+    id: 'm6-h3',
+    moduleId: 6,
+    prompt: 'A firm raising leverage from 20% to 35% may see its rating fall below BBB. Which statement is NOT correct?',
+    choices: [
+      'Losing investment grade can hurt its future ability to raise debt',
+      'A possible downgrade should be considered before issuing',
+      'A significantly higher interest rate would likely apply to the new debt',
+      'If the debt is fairly priced (NPV = 0), the downgrade can be ignored',
+    ],
+    answerIndex: 3,
+    explanation:
+      'Even fairly-priced debt (NPV = 0) does not make a downgrade irrelevant: losing investment grade restricts future financing and raises rates, so the rating must be considered before issuing.',
+    difficulty: 'hard',
+    topic: 'Credit ratings',
+  },
+  {
+    id: 'm6-h4',
+    moduleId: 6,
+    prompt: 'Meta announced a $40B buyback in Feb 2023 with leverage of only ~5% and an AA− rating. From a capital-structure view, what does this suggest?',
+    choices: [
+      'Meta was heavily overlevered',
+      'Meta was underlevered, so funding buybacks with some debt could move it toward its optimum and raise value',
+      'The buyback must have been pure EPS management',
+      'Meta had no cash to fund it',
+    ],
+    answerIndex: 1,
+    explanation:
+      'At ~5% leverage (vs the ~30% median) with an AA− rating, Meta looked underlevered; raising some debt to repurchase shares could increase value. EPS management was not the 2023 driver (it actually missed EPS, yet the stock rose).',
+    difficulty: 'hard',
+    topic: 'Meta case',
+  },
+
+  // ═══════════════════════════════════════════════════════════
+  // MODULE 7 — Risk Management
+  // 4 easy · 12 medium · 4 hard
+  // ═══════════════════════════════════════════════════════════
+
+  // ─── EASY ────────────────────────────────────────────────
+  {
+    id: 'm7-e1',
+    moduleId: 7,
+    prompt: 'In finance, what does "hedging" mean?',
+    choices: [
+      'Using derivatives to profit from expected price movements',
+      'Reducing or reallocating risks, e.g., with derivatives, liquidity, or operational changes',
+      'Diversifying the firm through acquisitions in unrelated industries',
+      'Holding as much cash as possible in high-interest currencies',
+    ],
+    answerIndex: 1,
+    explanation:
+      'Hedging is the reduction or reallocation of risk. Using derivatives to profit from price views is speculation — the opposite of hedging.',
+    difficulty: 'easy',
+    topic: 'Hedging basics',
+  },
+  {
+    id: 'm7-e2',
+    moduleId: 7,
+    prompt: 'What is a forward contract?',
+    choices: [
+      'An obligation to exchange an asset at a future date at a pre-specified price, with no cash exchanged upfront',
+      'An option (but not an obligation) to buy an asset in the future',
+      'A standardized contract that requires a margin account at an exchange',
+      'A loan whose interest rate floats with SOFR',
+    ],
+    answerIndex: 0,
+    explanation:
+      'A forward is a bilateral obligation to exchange an asset at a pre-specified price on a future date; nothing is paid when the contract is written. The margin-account contract is a futures.',
+    difficulty: 'easy',
+    topic: 'Forwards',
+  },
+  {
+    id: 'm7-e3',
+    moduleId: 7,
+    prompt: 'Which of the following is a GOOD reason for a company to hedge?',
+    choices: [
+      'The CFO is confident about where steel prices are heading',
+      'Reducing profit volatility, because shareholders hate any volatility',
+      'Reducing the risk of financial distress for a highly levered firm',
+      'Generating extra trading profits in the futures market',
+    ],
+    answerIndex: 2,
+    explanation:
+      'Valid reasons: choosing which risks to take, eliminating risks outside the firm\'s control, and reducing distress risk. Volatility per se doesn\'t matter (shareholders diversify on their own), and trading on views is speculation.',
+    difficulty: 'easy',
+    topic: 'Reasons to hedge',
+  },
+  {
+    id: 'm7-e4',
+    moduleId: 7,
+    prompt: 'What main problem do futures contracts solve compared with forward contracts?',
+    choices: [
+      'They eliminate currency risk completely, unlike forwards',
+      'Settlement risk — the exchange requires margin accounts and assumes the default risk',
+      'They are cheaper because no collateral is ever required',
+      'They allow companies to hedge credit spreads on their own commercial paper',
+    ],
+    answerIndex: 1,
+    explanation:
+      'A forward is just a signed contract, so a counterparty may default (settlement risk). Futures are standardized, exchange-traded, and margined — the exchange itself absorbs the settlement risk.',
+    difficulty: 'easy',
+    topic: 'Futures',
+  },
+
+  // ─── MEDIUM ──────────────────────────────────────────────
+  {
+    id: 'm7-m1',
+    moduleId: 7,
+    prompt: 'In August 2025 a US company must pay £200M to a UK supplier in December 2025. Spot = $1.328/£, December forward = $1.329/£. If it hedges with a forward, what does it pay in December?',
+    choices: [
+      '$265.6M',
+      '$265.8M',
+      '$300M if the pound appreciates to $1.5/£',
+      'It depends on the December spot rate',
+    ],
+    answerIndex: 1,
+    explanation:
+      'The forward locks in the FORWARD rate: 200M × 1.329 = $265.8M, irrespective of the future spot rate. (200M × 1.328 = $265.6M would be the spot — which cannot be locked in.)',
+    difficulty: 'medium',
+    topic: 'Forward math',
+  },
+  {
+    id: 'm7-m2',
+    moduleId: 7,
+    prompt: 'A US company will RECEIVE £1M from a customer in December. To hedge with pound futures (contract size £62,500), it should…',
+    choices: [
+      'Buy (go long) 16 pound futures contracts',
+      'Sell (short) 16 pound futures contracts',
+      'Buy 8 contracts and sell 8 contracts',
+      'Sell 32 contracts to be safe',
+    ],
+    answerIndex: 1,
+    explanation:
+      'Receiving pounds means operations are long pounds → the hedge is to SHORT pound futures: £1,000,000 / £62,500 = 16 contracts (short pounds, long dollars).',
+    difficulty: 'medium',
+    topic: 'Futures math',
+  },
+  {
+    id: 'm7-m3',
+    moduleId: 7,
+    prompt: 'The company shorted £1M of futures at $1.329/£ with a $100,000 margin deposit. A month later the futures price is $1.4/£. What happens to the margin account?',
+    choices: [
+      'It grows by $71,000 because the hedge "worked"',
+      'Nothing until the contract matures in December',
+      'The CME deducts the $71,000 loss, leaving $29,000 (plus accrued interest) — and will likely require a top-up',
+      'The account is closed and the position cancelled automatically',
+    ],
+    answerIndex: 2,
+    explanation:
+      'Marking to market: loss = (1.4 − 1.329) × 1,000,000 = $71,000, deducted daily from margin → $29,000 left. The exchange will typically issue a margin call to restore the account.',
+    difficulty: 'medium',
+    topic: 'Marking to market',
+  },
+  {
+    id: 'm7-m4',
+    moduleId: 7,
+    prompt: 'That same company lost $71,000 on its short-pound futures position. Did the CFO make a mistake?',
+    choices: [
+      'Yes — the position lost money, so the hedge failed',
+      'No — the £1M receivable gained an equivalent $71,000, so the net effect is zero, which is exactly what hedging aims for',
+      'Yes — the company should have taken a long position instead',
+      'No — because the loss is tax-deductible',
+    ],
+    answerIndex: 1,
+    explanation:
+      '"Hedging is the search for zero": derivative loss (−$71k) + operational gain (+$71k) = 0. The goal was eliminating exchange-rate risk, not trading profit.',
+    difficulty: 'medium',
+    topic: 'Search for zero',
+  },
+  {
+    id: 'm7-m5',
+    moduleId: 7,
+    prompt: 'After the pound appreciated, the CFO "feels" it will keep rising and proposes closing the short futures and going LONG pounds. This is…',
+    choices: [
+      'Sensible — the CFO knows the market and should exploit the trend',
+      'Speculation — the position must be dictated by operational exposure (receiving pounds → short), not by anyone\'s currency views',
+      'A cheaper form of hedging, since long positions require no margin',
+      'Required by the exchange after a margin call',
+    ],
+    answerIndex: 1,
+    explanation:
+      'Exchange rates are unpredictable; the firm receives pounds, so only a short position hedges. Going long ADDS pound exposure — a textbook example of speculation ("the CFO should move to Wall Street").',
+    difficulty: 'medium',
+    topic: 'Hedging vs speculation',
+  },
+  {
+    id: 'm7-m6',
+    moduleId: 7,
+    prompt: 'A small firm borrows at SOFR + 2% (SOFR = 4.3%, so 6.3%). How can it fix its interest rate without bond-market access?',
+    choices: [
+      'Enter an interest rate swap: pay fixed 4.3%, receive floating SOFR — the all-in rate stays 6.3%',
+      'Enter an interest rate swap: pay floating SOFR, receive fixed 4.3%',
+      'Buy SOFR futures to profit when rates fall',
+      'Issue fixed-rate bonds instead of the bank loan',
+    ],
+    answerIndex: 0,
+    explanation:
+      'Short fixed, long floating: the received SOFR offsets the loan\'s floating base rate, leaving fixed 4.3% + 2% spread = 6.3% regardless of where SOFR goes. Bonds are ruled out — the firm has no market access.',
+    difficulty: 'medium',
+    topic: 'Interest rate swaps',
+  },
+  {
+    id: 'm7-m7',
+    moduleId: 7,
+    prompt: 'A company will issue $100M of commercial paper in 3 months and fears rates will rise. Using SOFR futures, it should…',
+    choices: [
+      'Buy futures — if rates rise, futures prices rise too',
+      'Sell (short) futures — debt prices move inversely to rates, so the short profits if rates rise, offsetting the higher borrowing cost',
+      'Do nothing — commercial paper rates are fixed by regulation',
+      'Buy futures on its own commercial paper',
+    ],
+    answerIndex: 1,
+    explanation:
+      'Rates up → prices down → a SHORT futures position profits, compensating the higher issuance rate. There are no futures on a specific corporation\'s paper — only on benchmarks like SOFR.',
+    difficulty: 'medium',
+    topic: 'Interest rate futures',
+  },
+  {
+    id: 'm7-m8',
+    moduleId: 7,
+    prompt: 'Why is hedging the future CP issuance with SOFR futures IMPERFECT?',
+    choices: [
+      'Because SOFR futures are illiquid and expensive',
+      'Because the futures hedge the base rate but not the firm\'s credit spread — if the spread jumps (0.2% → 0.5%, as in the 2008 CP crisis), there is no hedge',
+      'Because the company cannot short futures without a credit rating',
+      'Because marking to market is prohibited for corporate hedgers',
+    ],
+    answerIndex: 1,
+    explanation:
+      'No futures exist for one corporation\'s paper. SOFR futures cover only base-rate risk; spread risk remains — which is exactly what blew out in the post-2008 CP market.',
+    difficulty: 'medium',
+    topic: 'Imperfect hedging',
+  },
+  {
+    id: 'm7-m9',
+    moduleId: 7,
+    prompt: 'How can liquidity FULLY hedge the CP-issuance problem (base rate AND spread)?',
+    choices: [
+      'Hold the $100M in stocks until the issuance date',
+      'Issue the commercial paper TODAY at 4.5% and hold the proceeds in a safe asset until the cash is needed',
+      'Wait 3 months but pre-negotiate the spread with investors',
+      'Buy SOFR futures and also short Treasury bonds',
+    ],
+    answerIndex: 1,
+    explanation:
+      'Issuing early locks in today\'s total rate (base + spread). The catch: the cash must be HELD (in Treasuries/deposits) — spend it and the hedge fails. Costs: low return, taxable interest, temptation to spend.',
+    difficulty: 'medium',
+    topic: 'Liquidity as hedge',
+  },
+  {
+    id: 'm7-m10',
+    moduleId: 7,
+    prompt: 'A US company must PAY £200M in December. How does it hedge with its balance sheet (no derivatives)?',
+    choices: [
+      'Buy pounds today at the spot rate and hold cash in pounds (safe £ asset) until the payment',
+      'Borrow pounds today and convert them to dollars',
+      'Hold extra dollars in a US money-market fund',
+      'Buy UK stocks with dollars',
+    ],
+    answerIndex: 0,
+    explanation:
+      'A future £ payment → buy the pounds now and hold cash IN POUNDS. (Borrowing pounds and converting to dollars is the hedge for the reverse case — a future £ receivable.) Holding dollars leaves the conversion risk open.',
+    difficulty: 'medium',
+    topic: 'Balance-sheet hedging',
+  },
+  {
+    id: 'm7-m11',
+    moduleId: 7,
+    prompt: 'Honda earns ~50% of car revenue in US dollars while much of its cost base is in yen. What exactly is Honda afraid of, and what is its operational solution?',
+    choices: [
+      'Yen depreciation; solution: hold more yen cash',
+      'Dollar depreciation against the yen; solution: move production to the US so costs and revenues share a currency (natural hedge)',
+      'Dollar appreciation; solution: short dollar futures',
+      'US demand falling; solution: currency swaps',
+    ],
+    answerIndex: 1,
+    explanation:
+      'Yen costs + dollar revenues → profits fall if the dollar depreciates. Honda\'s 20-F shows no hedging derivatives (FY2023–25) and no significant foreign-currency debt — it relies on US production: a natural hedge.',
+    difficulty: 'medium',
+    topic: 'Operational hedging',
+  },
+  {
+    id: 'm7-m12',
+    moduleId: 7,
+    prompt: 'Rolls-Royce reported a £4.6B pre-tax loss for 2016, driven by a £4.4B revaluation of its currency hedges after Brexit sank the pound. Why did CEO Warren East call this "largely irrelevant"?',
+    choices: [
+      'Because the loss was fabricated by short-sellers',
+      'Because accounting mark-to-market of open hedges has no cash impact, and the derivative losses mirror MORE valuable future dollar revenues — the hedge did its job',
+      'Because Rolls-Royce immediately closed all hedge positions',
+      'Because the UK government reimbursed the loss',
+    ],
+    answerIndex: 1,
+    explanation:
+      'RR\'s operations are long dollars (dollar-priced engines/contracts, sterling costs), so it shorts dollars. Sterling\'s fall raised the sterling value of future dollar income while the hedges showed a mark-to-market loss — net ≈ zero, no cash effect while hedges stay open.',
+    difficulty: 'medium',
+    topic: 'Rolls-Royce case',
+  },
+
+  // ─── HARD ────────────────────────────────────────────────
+  {
+    id: 'm7-h1',
+    moduleId: 7,
+    prompt: 'Nintendo (2010): 80%+ of revenue abroad, yen costs, and $7.4B of cash held in foreign currencies (~70% of its cash). The strong yen produced ¥62.1B of appraisal losses. Per the course, why is this SPECULATION rather than hedging?',
+    choices: [
+      'Because Nintendo lost money — any losing position is speculation',
+      'Because holding foreign cash is always speculative',
+      'Because operations were already LONG dollars (dollar sales, yen costs); holding USD cash adds exposure in the SAME direction — the correct hedge is to short dollars',
+      'Because Nintendo should have held euros instead of dollars',
+    ],
+    answerIndex: 2,
+    explanation:
+      'The test is direction vs. operational exposure, not the P&L outcome. Nintendo\'s operations are long USD; a hedge must be short USD (borrow dollars, short forwards/futures, or move costs into dollars). USD cash doubles the long-dollar bet — the "wrong direction." Chasing higher foreign interest rates is a price view, i.e., speculation.',
+    difficulty: 'hard',
+    topic: 'Nintendo case',
+  },
+  {
+    id: 'm7-h2',
+    moduleId: 7,
+    prompt: 'Investors tell Rolls-Royce\'s CFO: "You shouldn\'t have hedged — without the hedges you\'d have profited from the dollar\'s appreciation." What is the correct response?',
+    choices: [
+      'Agree, and close the hedgebook to capture future currency gains',
+      'That is hindsight speculation: the pound could as easily have moved the other way. Hedging is an insurance premium paid to remove existential currency risk from ~$5–6B/year of net dollar inflows',
+      'Admit the error but keep hedging for tax reasons',
+      'Point out that hedging is legally required for UK exporters',
+    ],
+    answerIndex: 1,
+    explanation:
+      'Judging a hedge by the realized path is exactly the speculative mindset. The hedge\'s purpose is knowing how many pounds future dollar revenues will bring; the cost ("may not be making as much as they could") is the premium for removing existential risk.',
+    difficulty: 'hard',
+    topic: 'Rolls-Royce case',
+  },
+  {
+    id: 'm7-h3',
+    moduleId: 7,
+    prompt: 'Rolls-Royce\'s total hedgebook is $38B — about 2.5× its annual sales. Which statement is NOT a valid justification for that size?',
+    choices: [
+      'Engines live 20+ years and service contracts run 5–10 years, so future contracted dollar inflows far exceed one year of sales',
+      'RR hedges its overall net dollar exposure, including expected future sales, not individual contracts',
+      'Being more than 100% of one year\'s sales proves the position is directional profit-seeking, so RR is speculating',
+      'Imperfect hedging of long-dated exposures can justify a book covering multiple years',
+    ],
+    answerIndex: 2,
+    explanation:
+      'A hedgebook larger than one year\'s sales is fine when it covers MULTI-YEAR contracted inflows. The real danger sign would be covering MORE than expected future revenues (the M&B mistake — hedging a deal that never happened). RR says its book is "nowhere near" total contracted dollar inflows.',
+    difficulty: 'hard',
+    topic: 'Rolls-Royce case',
+  },
+  {
+    id: 'm7-h4',
+    moduleId: 7,
+    prompt: 'US oil producers hedged 51.7% of output entering 2020, but only 21% of 2025 output and just 4% for 2026 — "because prices have gone up." Southwest, meanwhile, stopped hedging fuel in 2025 since it "hasn\'t been beneficial for 10–15 years." What is the course\'s verdict on these rationales?',
+    choices: [
+      'Both are sound: hedge less when prices favor you, and stop hedges that lose money',
+      'Both embed price views or judge hedges by trading P&L — speculation-style reasoning. The right question is distress risk: producers should short based on downside protection needs; consumers like airlines are short oil and should go long, or face distress, wrecked compensation, and uncertain pass-through',
+      'Producers are wrong but Southwest is right, because airline hedges never pay off',
+      'Producers are right because high prices guarantee minimum value forever',
+    ],
+    answerIndex: 1,
+    explanation:
+      '"Hedge less because prices rose" is a forecast (speculation); "the hedge lost money" judges insurance by whether disaster happened. Hedging decisions should follow operational exposure and distress risk: producers (long oil) short; consumers (short oil) long.',
+    difficulty: 'hard',
+    topic: 'Oil hedging 2026',
+  },
 ]
 
 export const questionsByModule = (moduleId: number) =>

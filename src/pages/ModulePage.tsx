@@ -8,6 +8,8 @@ import { Module2Content } from '@/modules/Module2'
 import { Module3Content } from '@/modules/Module3'
 import { Module4Content } from '@/modules/Module4'
 import { Module5Content } from '@/modules/Module5'
+import { Module6Content } from '@/modules/Module6'
+import { Module7Content } from '@/modules/Module7'
 import { useProgress } from '@/store/progress'
 
 export function ModulePage() {
@@ -92,6 +94,10 @@ export function ModulePage() {
         <Module4Content />
       ) : mod.id === 5 ? (
         <Module5Content />
+      ) : mod.id === 6 ? (
+        <Module6Content />
+      ) : mod.id === 7 ? (
+        <Module7Content />
       ) : (
         <ModulePlaceholder moduleId={mod.id} />
       )}

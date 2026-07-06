@@ -1424,6 +1424,545 @@ export const GLOSSARY: GlossaryTerm[] = [
     related: ['Leverage', 'Costs of Financial Distress', 'Financial Distress'],
     tags: ['capital-structure'],
   },
+
+  // ───── Module 6 · Understanding Debt Financing and Payout Policy ─────
+  {
+    term: 'Yield to Maturity (YTM)',
+    moduleId: 6,
+    definition:
+      'The promised return on a bond IF the issuer does not default. Observable from the bond price. It is NOT the expected return — for risky issuers the YTM overstates what investors actually expect to earn.',
+    formula: 'YTM = promised return (paid only if no default)',
+    related: ['Cost of Debt (r_D)', 'Credit Risk', 'Probability of Default'],
+    tags: ['debt', 'bonds'],
+  },
+  {
+    term: 'Cost of Debt (r_D)',
+    moduleId: 6,
+    definition:
+      'The EXPECTED return on a company\'s debt — the figure used in the WACC. Computed from the YTM by adjusting for the probability of default and the recovery rate. Always ≤ YTM; the gap is large when credit risk is high.',
+    formula: 'r_D = (1 − p)·YTM + p·(recovery − 1)',
+    related: ['Yield to Maturity (YTM)', 'Probability of Default', 'Recovery Rate', 'WACC'],
+    tags: ['debt', 'bonds'],
+  },
+  {
+    term: 'Credit Risk',
+    moduleId: 6,
+    definition:
+      'The risk a lender takes that the borrower defaults. Driven by the probability of default and the recovery rate. The main force behind credit markets and the spread of corporate yields over Treasuries.',
+    related: ['Probability of Default', 'Recovery Rate', 'Credit Rating'],
+    tags: ['debt', 'risk'],
+  },
+  {
+    term: 'Probability of Default',
+    moduleId: 6,
+    definition:
+      'The chance an issuer fails to meet a debt obligation. Reported historically by rating (e.g., BBB ≈ 5.3% over 10 years) or estimated firm-specifically (Kraft-Heinz ≈ 0.4%/year, April 2022). Driven by leverage, profitability, size, cash-flow risk.',
+    related: ['Credit Risk', 'Recovery Rate', 'Credit Rating'],
+    tags: ['debt', 'risk'],
+  },
+  {
+    term: 'Recovery Rate',
+    moduleId: 6,
+    definition:
+      'The fraction of a debt\'s face value a lender recovers in default. Historically ~40% for senior unsecured bonds and above 80% for secured bank debt. The return upon default equals (recovery − 1), e.g. 40% recovery → −60%.',
+    formula: 'Return if default = recovery − 1',
+    related: ['Probability of Default', 'Secured Debt', 'Unsecured Debt'],
+    tags: ['debt', 'risk'],
+  },
+  {
+    term: 'Credit Rating',
+    moduleId: 6,
+    definition:
+      'An agency opinion (S&P, Moody\'s, Fitch) on an issuer\'s ability and willingness to meet obligations in full and on time — a summary measure of credit risk. Depends not only on leverage but also profitability, size, and cash-flow risk.',
+    related: ['Credit Risk', 'Investment Grade', 'Junk (Speculative) Grade', 'Interest Coverage Ratio'],
+    tags: ['debt', 'ratings'],
+  },
+  {
+    term: 'Investment Grade',
+    moduleId: 6,
+    definition:
+      'Ratings of BBB− (S&P) or higher — the quality tier most institutional investors require. Insurance companies, important bond buyers, are typically barred from holding bonds rated below BBB−.',
+    related: ['Credit Rating', 'Junk (Speculative) Grade', 'Rating Downgrade'],
+    tags: ['debt', 'ratings'],
+  },
+  {
+    term: 'Junk (Speculative) Grade',
+    moduleId: 6,
+    definition:
+      'Ratings of BB+ (S&P) or lower. Crossing from BBB− to BB+ is a downgrade out of investment grade, which can restrict access to commercial paper, credit lines, and certain institutional buyers.',
+    related: ['Investment Grade', 'Rating Downgrade', 'Credit Rating'],
+    tags: ['debt', 'ratings'],
+  },
+  {
+    term: 'Rating Downgrade',
+    moduleId: 6,
+    definition:
+      'A lowering of an issuer\'s credit rating. Especially costly when it crosses into junk: loss of commercial-paper access, higher interest rates, rating triggers in covenants, tighter bank-capital treatment. Why firms target ratings, not just an optimal leverage ratio.',
+    related: ['Investment Grade', 'Junk (Speculative) Grade', 'Commercial Paper'],
+    tags: ['debt', 'ratings'],
+  },
+  {
+    term: 'Interest Coverage Ratio',
+    moduleId: 6,
+    definition:
+      'EBIT divided by interest expense — how many times operating income covers interest. Higher coverage supports a higher credit rating; a coverage near 2 can push a firm below BBB.',
+    formula: 'Interest Coverage = EBIT / Interest expense',
+    related: ['Credit Rating', 'Leverage'],
+    tags: ['debt', 'ratings'],
+  },
+  {
+    term: 'Spread Method',
+    moduleId: 6,
+    definition:
+      'Estimating the cost of debt as the risk-free rate plus a credit spread (typically 1–2%, wider for lower ratings). Used when there is no 30-year bond or no traded debt; the 10-year spread can be applied to the 30-year Treasury to match maturity.',
+    formula: 'r_D ≈ risk-free rate + spread (1–2%)',
+    related: ['Cost of Debt (r_D)', 'Yield to Maturity (YTM)'],
+    tags: ['debt', 'bonds'],
+  },
+  {
+    term: 'Commercial Paper',
+    moduleId: 6,
+    definition:
+      'Short-term debt (typically 20–270 days) sold directly to the market with no bank, available only to high-rated firms (e.g., Walmart, 8% of its debt). U.S. non-financial commercial paper outstanding ≈ $300B (mid-2025).',
+    related: ['Credit Rating', 'Bond', 'Revolving Credit'],
+    tags: ['debt', 'types'],
+  },
+  {
+    term: 'Revolving Credit',
+    moduleId: 6,
+    definition:
+      'A bank loan created when a firm draws down a credit line. The undrawn line itself (e.g., Walmart\'s $9.4B) is held as liquidity insurance against refinancing trouble, despite a maintenance fee.',
+    related: ['Term Loan', 'Commercial Paper', 'Liquidity Risk'],
+    tags: ['debt', 'types'],
+  },
+  {
+    term: 'Term Loan',
+    moduleId: 6,
+    definition:
+      'A standard bank loan that does NOT originate from a credit-line drawdown (e.g., a mortgage). Can be short or long term. The main debt source for small firms like Pricemark; absent at Walmart.',
+    related: ['Revolving Credit', 'Bank vs. Market Financing', 'Secured Debt'],
+    tags: ['debt', 'types'],
+  },
+  {
+    term: 'Bond',
+    moduleId: 6,
+    definition:
+      'Debt issued directly to the market (no bank lender), held by investors, pension and mutual funds. Usually unsecured — backed by the firm\'s entire cash flows, not a specific asset. Requires a credit rating (62% of Walmart\'s debt).',
+    related: ['Commercial Paper', 'Lease', 'Unsecured Debt', 'Credit Rating'],
+    tags: ['debt', 'types'],
+  },
+  {
+    term: 'Lease',
+    moduleId: 6,
+    definition:
+      'A contract that creates a future liability tied to a specific asset. A finance (capital) lease transfers ownership at the end and was always treated as debt; an operating lease is pure rental and has been reported as debt only since the 2018 accounting change.',
+    related: ['Secured Debt', 'Bond'],
+    tags: ['debt', 'types'],
+  },
+  {
+    term: 'Secured Debt',
+    moduleId: 6,
+    definition:
+      'Debt collateralized by a specific asset (real estate, machinery, or carved-out cash flows). The lender has priority over that asset in default, raising recovery rates. Bank debt is typically secured; leases are secured by the leased asset.',
+    related: ['Unsecured Debt', 'Recovery Rate', 'Covenant'],
+    tags: ['debt', 'contracts'],
+  },
+  {
+    term: 'Unsecured Debt',
+    moduleId: 6,
+    definition:
+      'Debt with no specific collateral, honored out of the firm\'s overall cash flows. Bonds and commercial paper are almost always unsecured, which lowers recovery (~40% for senior unsecured bonds) versus secured bank debt (>80%).',
+    related: ['Secured Debt', 'Recovery Rate', 'Seniority'],
+    tags: ['debt', 'contracts'],
+  },
+  {
+    term: 'Seniority',
+    moduleId: 6,
+    definition:
+      'Priority of a claim in bankruptcy. Senior debt is paid before junior debt and equity. Together with collateral and covenants, seniority is a contract feature as important as the interest rate for pricing debt.',
+    related: ['Secured Debt', 'Unsecured Debt', 'Covenant'],
+    tags: ['debt', 'contracts'],
+  },
+  {
+    term: 'Covenant',
+    moduleId: 6,
+    definition:
+      'A condition a borrower must maintain to keep a loan in good standing (e.g., EBITDA above a threshold). Common in bank loans, rare/general in bonds. Gives the bank control and raises recovery rates.',
+    related: ['Technical Default', 'Secured Debt', 'Bank vs. Market Financing'],
+    tags: ['debt', 'contracts'],
+  },
+  {
+    term: 'Technical Default',
+    moduleId: 6,
+    definition:
+      'A default triggered by a covenant violation rather than an inability to pay. Banks set the threshold above interest due, so control transfers to the bank BEFORE actual insolvency — letting it renegotiate or call the loan, increasing recovery.',
+    related: ['Covenant', 'Recovery Rate'],
+    tags: ['debt', 'contracts'],
+  },
+  {
+    term: 'Bank vs. Market Financing',
+    moduleId: 6,
+    definition:
+      'The choice between bank loans (secured, covenant-heavy, lower rate, more lender control) and bonds (unsecured, arm\'s-length, higher rate, less control). Banks suit small, young, risky firms (Pricemark); bonds suit large, mature firms (Walmart).',
+    related: ['Term Loan', 'Bond', 'Covenant', 'Unrated Company'],
+    tags: ['debt', 'choice'],
+  },
+  {
+    term: 'Unrated Company',
+    moduleId: 6,
+    definition:
+      'A firm with no official credit rating because it has not issued bonds. S&P still produces a pseudo-rating for all public firms (Pricemark ≈ BB−), useful for gauging credit risk but insufficient to issue a bond.',
+    related: ['Credit Rating', 'Bank vs. Market Financing'],
+    tags: ['debt', 'ratings'],
+  },
+  {
+    term: 'Payout Policy',
+    moduleId: 6,
+    definition:
+      'How a firm returns cash to equity investors — via dividends and share repurchases. The mirror image of raising capital. Payments to debt investors are not "policy" because they are contractually required.',
+    related: ['Dividend', 'Share Repurchase (Buyback)', 'Dividend Puzzle'],
+    tags: ['payout'],
+  },
+  {
+    term: 'Dividend',
+    moduleId: 6,
+    definition:
+      'A cash distribution to all shareholders. Under MM it is zero-NPV ("moving cash from one pocket to another"), but data show prices rise on increases (+1.32%) and initiations (+3.4%) and fall sharply on omissions (−7%). Taxed at up to ~20%; cannot be cut without a price penalty.',
+    related: ['Share Repurchase (Buyback)', 'Dividend Signaling', 'Dividend Puzzle'],
+    tags: ['payout'],
+  },
+  {
+    term: 'Share Repurchase (Buyback)',
+    moduleId: 6,
+    definition:
+      'A firm buying back its own shares — the mirror image of an equity issue. At market price the NPV is zero (cash spent offsets fewer shares). On average prices rise ~1.54% on announcement. More tax-efficient and more flexible than dividends.',
+    formula: 'P_new = (Equity value − Cash spent) / (Shares − Repurchased)',
+    related: ['Dividend', 'Dilution is an Illusion', 'EPS Management', 'SEC Rule 10b-18'],
+    tags: ['payout'],
+  },
+  {
+    term: 'Dilution is an Illusion',
+    moduleId: 6,
+    definition:
+      'A buyback reduces share count but also spends cash; at the market price these exactly offset, so the stock price is unchanged (NPV = 0). The mirror of the equity-issuance dilution illusion. Prices rise after buybacks for other reasons (signaling), not arithmetic.',
+    related: ['Share Repurchase (Buyback)', 'EPS Management'],
+    tags: ['payout'],
+  },
+  {
+    term: 'Dividend Signaling',
+    moduleId: 6,
+    definition:
+      'Raising a dividend (or buying back stock) signals management confidence in future cash flows, since both spend cash. Repurchases additionally signal undervaluation (the firm thinks its stock is cheap); dividends signal stability via the expectation of continuation.',
+    related: ['Dividend', 'Share Repurchase (Buyback)', 'Cash Management'],
+    tags: ['payout', 'signaling'],
+  },
+  {
+    term: 'Cash Management',
+    moduleId: 6,
+    definition:
+      'A motive for payout: distributing cash prevents it from piling up on the balance sheet, where it tends to fund value-destroying acquisitions and sloppy spending. Evidence: each dollar of excess cash destroys ~$0.07 of shareholder value (free-cash-flow problem).',
+    formula: '≈ $0.07 value destroyed per $1 of excess cash',
+    related: ['Dividend', 'Share Repurchase (Buyback)', 'Free Cash Flow'],
+    tags: ['payout', 'agency'],
+  },
+  {
+    term: 'EPS Management',
+    moduleId: 6,
+    definition:
+      'Using buybacks to lift earnings per share by cutting share count — a repurchase-only effect (dividends don\'t change EPS). ~37% of repurchases come from firms about to just miss the analyst EPS forecast, more so when CEO pay is tied to EPS (an agency concern).',
+    formula: 'EPS = (Net income − foregone interest) / (Shares − Repurchased)',
+    related: ['Share Repurchase (Buyback)', 'Dividend', 'Dividend Puzzle'],
+    tags: ['payout', 'agency'],
+  },
+  {
+    term: 'Dividend Puzzle',
+    moduleId: 6,
+    definition:
+      'Repurchases beat dividends on taxes, flexibility, and EPS, yet firms still pay large dividends. Possible explanations: behavioral preference for "real" cash, dividends signaling stability, and CFO fear of being blamed for buying back at a high price.',
+    related: ['Dividend', 'Share Repurchase (Buyback)', 'SEC Rule 10b-18'],
+    tags: ['payout'],
+  },
+  {
+    term: 'SEC Rule 10b-18',
+    moduleId: 6,
+    definition:
+      'The 1982 "safe harbor" that lets firms repurchase shares without insider-trading liability if they follow set conditions. Before 1982 buyback litigation risk was high; afterward repurchases took off and overtook dividends as the main payout method.',
+    related: ['Share Repurchase (Buyback)', 'Dividend Puzzle'],
+    tags: ['payout', 'regulation'],
+  },
+  {
+    term: 'Dividend Initiation / Omission',
+    moduleId: 6,
+    definition:
+      'A firm paying a dividend for the first time (initiation, ~+3.4% price reaction) or stopping its dividend (omission, ~−7%). The asymmetric reactions show investors strongly dislike dividend cuts. Meta initiated its first dividend in 2024.',
+    related: ['Dividend', 'Dividend Signaling', 'Dividend Puzzle'],
+    tags: ['payout', 'signaling'],
+  },
+
+  // ───── Module 7 · Risk Management ─────
+  {
+    term: 'Hedging',
+    moduleId: 7,
+    definition:
+      'Reducing or reallocating risks using financial instruments (forwards, futures, options, swaps) or other mechanisms (liquidity, operational hedging). Hedging is "the search for zero": the financial position offsets the operational exposure so the net effect of the risk factor is ~0 — it is NOT about making trading profits.',
+    related: ['Speculation', 'Operational Exposure', 'Derivative'],
+    tags: ['risk management'],
+  },
+  {
+    term: 'Speculation',
+    moduleId: 7,
+    definition:
+      'Using derivatives (or balance-sheet positions) to profit from a view about future prices — the opposite of hedging. Test: does the financial position offset the firm\'s operational exposure? If it adds exposure in the same direction (e.g., Nintendo holding USD cash while operationally long dollars), it is speculation. Prices are unpredictable — a CFO with a price view "should move to Wall Street."',
+    related: ['Hedging', 'Operational Exposure'],
+    tags: ['risk management'],
+  },
+  {
+    term: 'Derivative',
+    moduleId: 7,
+    definition:
+      'A security whose value derives from an underlying asset or rate. Corporate risk-management derivatives include forwards, futures, options, and swaps — available for tradable risks such as currencies, commodities (oil, steel), and interest rates.',
+    related: ['Forward Contract', 'Futures Contract', 'Interest Rate Swap'],
+    tags: ['instruments'],
+  },
+  {
+    term: 'Good Reasons to Hedge',
+    moduleId: 7,
+    definition:
+      'Three valid motives: (1) choosing which risks to take (keep Indian-market exposure, drop rupee exposure); (2) eliminating risks outside the company\'s control (oil prices for an airline — also cleans up executive-compensation signals); (3) reducing the risk of financial distress (distress destroys value, so a levered firm gains from hedging).',
+    related: ['Bad Reasons to Hedge', 'Financial Distress and Hedging'],
+    tags: ['risk management'],
+  },
+  {
+    term: 'Bad Reasons to Hedge',
+    moduleId: 7,
+    definition:
+      'Two invalid motives: (1) reducing profit volatility per se — shareholders can diversify on their own (same logic as diversifying M&A), and no risk = no return; (2) generating trading profits from a market view — that is speculation, not hedging.',
+    related: ['Good Reasons to Hedge', 'Speculation'],
+    tags: ['risk management'],
+  },
+  {
+    term: 'Financial Distress and Hedging',
+    moduleId: 7,
+    definition:
+      'For an unlevered firm, hedging (e.g., an airline hedging oil) barely affects value — volatility per se doesn\'t matter to diversified shareholders. For a highly levered firm, an adverse move (oil price up) can trigger financial distress, raising the cost of capital and destroying value — so hedging that risk creates value.',
+    related: ['Good Reasons to Hedge', 'Hedging'],
+    tags: ['risk management', 'capital structure'],
+  },
+  {
+    term: 'Forward Contract',
+    moduleId: 7,
+    definition:
+      'An obligation to exchange an asset (real or financial) at a future date at a pre-specified price. No cash changes hands when the contract is written ("a piece of paper"); the counterparties settle at maturity. Carries settlement risk, so forwards are used mainly by the financial sector and very high-rated firms.',
+    formula: 'Payment = Notional × Forward rate (locked in)',
+    related: ['Futures Contract', 'Settlement Risk', 'Forward Rate'],
+    tags: ['instruments'],
+  },
+  {
+    term: 'Forward Rate',
+    moduleId: 7,
+    definition:
+      'The market-determined rate at which a forward/futures contract exchanges currencies (or other assets) at maturity. August 2025 example: spot $1.328/£, December-2025 forward $1.329/£ — the firm can lock in 1.329, not the spot rate. £200M × 1.329 = $265.8M irrespective of the future spot.',
+    formula: '£200M × $1.329/£ = $265.8M',
+    related: ['Forward Contract', 'Currency Risk'],
+    tags: ['instruments', 'fx'],
+  },
+  {
+    term: 'Settlement Risk',
+    moduleId: 7,
+    definition:
+      'The risk that one party defaults on a (forward) contract at settlement. Forwards cost nothing upfront, so they only work between reliable parties. Futures exchanges solve this with standardization, margin accounts, and by interposing the exchange as the counterparty.',
+    related: ['Forward Contract', 'Futures Contract', 'Margin Account'],
+    tags: ['risk management'],
+  },
+  {
+    term: 'Futures Contract',
+    moduleId: 7,
+    definition:
+      'A standardized derivative that trades on an exchange (e.g., the CME). The exchange requires margin accounts from buyers and sellers and assumes settlement risk — there is no direct counterparty. Contracts have minimum sizes (e.g., £62,500), so hedging £1M short takes 16 contracts.',
+    formula: '£1,000,000 / £62,500 = 16 contracts',
+    related: ['Forward Contract', 'Margin Account', 'Marking to Market'],
+    tags: ['instruments'],
+  },
+  {
+    term: 'Margin Account',
+    moduleId: 7,
+    definition:
+      'The cash deposit (escrow, interest-bearing) a futures exchange requires from both buyers and sellers so it can absorb defaults. Daily losses are deducted from margin: after the short-£1M position lost $71,000, a $100,000 margin fell to $29,000 (plus accrued interest) — likely triggering a margin call.',
+    related: ['Futures Contract', 'Marking to Market', 'Settlement Risk'],
+    tags: ['instruments'],
+  },
+  {
+    term: 'Marking to Market',
+    moduleId: 7,
+    definition:
+      'Daily revaluation of a futures position at current futures prices, with gains/losses settled through the margin account. Example: short £1M at 1.329; futures rate moves to 1.4 → loss = (1.4 − 1.329) × 1,000,000 = $71,000, deducted from margin. Same mechanism drove Rolls-Royce\'s reported £4.4B revaluation loss (accounting mark-to-market of open hedges, no cash impact).',
+    formula: 'P&L = (F_t − F_0) × Notional × direction',
+    related: ['Margin Account', 'Futures Contract', 'Rolls-Royce Case'],
+    tags: ['instruments'],
+  },
+  {
+    term: 'The Search for Zero',
+    moduleId: 7,
+    definition:
+      'The essence of hedging: the derivative\'s loss (gain) is offset by an equal operational gain (loss), netting to zero. Losing $71,000 on short-£ futures while the £1M receivable gained $71,000 means the CFO made NO mistake — exchange-rate risk was eliminated. Hedging targets zero, not trading profits.',
+    formula: 'Derivative P&L + Operational P&L = 0',
+    related: ['Hedging', 'Operational Exposure', 'Speculation'],
+    tags: ['risk management'],
+  },
+  {
+    term: 'Operational Exposure',
+    moduleId: 7,
+    definition:
+      'How a change in a risk factor (exchange rate, interest rate, commodity price) affects the firm\'s profits through its operations. The general hedging rule: determine the operational exposure, then take a financial position that moves profits in the OPPOSITE direction. Receiving pounds → short pounds; dollar revenues with yen/sterling costs → short dollars.',
+    related: ['Hedging', 'The Search for Zero', 'Natural Hedge'],
+    tags: ['risk management'],
+  },
+  {
+    term: 'Long / Short Position',
+    moduleId: 7,
+    definition:
+      'Long = committed to RECEIVE the asset/currency (gains when it appreciates); short = committed to PAY/deliver it (gains when it depreciates). A US firm paying £200M is naturally short pounds → hedges by going long pounds forward; a firm receiving £1M is long pounds → hedges by shorting pound futures.',
+    related: ['Forward Contract', 'Futures Contract', 'Operational Exposure'],
+    tags: ['instruments'],
+  },
+  {
+    term: 'Currency Risk',
+    moduleId: 7,
+    definition:
+      'Exposure of profits to exchange-rate movements. A US importer paying £200M fears pound appreciation ($1.328 → $1.5 turns a $265.8M cost into $300M unhedged); an exporter receiving foreign currency fears its depreciation. Hedge with forwards/futures, balance-sheet positions, or operational hedging.',
+    related: ['Forward Rate', 'Operational Hedging', 'Liquidity as a Substitute for Hedging'],
+    tags: ['fx'],
+  },
+  {
+    term: 'Interest Rate Risk',
+    moduleId: 7,
+    definition:
+      'Two corporate sources: (1) floating-rate debt — bank loans priced at SOFR + spread reprice when the base rate moves (SOFR 4.3% + 2% = 6.3%; SOFR to 4.6% → 6.6%, a liquidity shock for a small firm); (2) planned future issuance — rates may rise before a firm issues (e.g., $100M of commercial paper in 3 months at today\'s 4.5%).',
+    related: ['SOFR', 'Interest Rate Swap', 'Interest Rate Futures'],
+    tags: ['rates'],
+  },
+  {
+    term: 'Floating Rate Debt',
+    moduleId: 7,
+    definition:
+      'Debt whose interest rate = base rate + fixed spread, repricing as the base rate (SOFR) moves. Bank debt — the funding source for smaller, riskier firms without bond-market access — is almost always floating rate. Hedge the base-rate risk with an interest rate swap.',
+    formula: 'Rate = SOFR + spread (e.g., 4.3% + 2% = 6.3%)',
+    related: ['SOFR', 'Interest Rate Swap', 'Interest Rate Risk'],
+    tags: ['rates', 'debt'],
+  },
+  {
+    term: 'SOFR',
+    moduleId: 7,
+    definition:
+      'Secured Overnight Financing Rate — the interbank overnight rate that serves as the current risk-free benchmark for US loan pricing (SOFR + spread), replacing LIBOR after its self-reporting scandals. August 2025 in the course example: 4.3%. SOFR futures (3-month) trade on exchanges and are the hedging vehicle for base-rate risk.',
+    related: ['Floating Rate Debt', 'Interest Rate Futures', 'Imperfect Hedging'],
+    tags: ['rates'],
+  },
+  {
+    term: 'Interest Rate Swap',
+    moduleId: 7,
+    definition:
+      'A contract committing the firm to pay a fixed rate in exchange for receiving a floating rate (or vice versa). A borrower at SOFR + 2% enters "short fixed (pay 4.3%), long floating (receive SOFR)": the floating legs cancel and the all-in rate is fixed at 6.3% regardless of SOFR. Works both ways — if SOFR falls, the firm pays above market (that is the counterparty\'s upside).',
+    formula: 'Floating loan + (pay fixed, receive floating) = fixed-rate loan',
+    related: ['Floating Rate Debt', 'SOFR', 'Hedging'],
+    tags: ['instruments', 'rates'],
+  },
+  {
+    term: 'Interest Rate Futures',
+    moduleId: 7,
+    definition:
+      'Exchange-traded futures on rates (e.g., 3-month SOFR futures) used to lock in rates on planned future issuance. Debt prices move INVERSELY to rates, so a firm fearing higher rates SELLS (shorts) the futures: if rates rise and prices fall, the short profits, compensating the higher borrowing cost.',
+    related: ['SOFR', 'Interest Rate Risk', 'Imperfect Hedging'],
+    tags: ['instruments', 'rates'],
+  },
+  {
+    term: 'Imperfect Hedging',
+    moduleId: 7,
+    definition:
+      'When the available derivative covers only part of the exposure. SOFR futures hedge the base rate but NOT the firm-specific spread — no futures exist on one corporation\'s commercial paper. If SOFR is flat but the CP spread jumps 0.2% → 0.5% (as in the 2008 CP crisis), the futures hedge pays nothing. Remedies: liquidity (issue early and hold cash) or operational hedging.',
+    related: ['Interest Rate Futures', 'Liquidity as a Substitute for Hedging', 'Operational Hedging'],
+    tags: ['risk management', 'rates'],
+  },
+  {
+    term: 'Liquidity as a Substitute for Hedging',
+    moduleId: 7,
+    definition:
+      'Using the balance sheet instead of derivatives: issue the commercial paper TODAY at 4.5% and hold the cash in a safe asset until needed (eliminates base-rate AND spread risk); buy pounds today and hold cash in pounds for a future £ payment; or borrow in pounds and convert to dollars against a future £ receivable. Requires actually holding the cash — spend it and the hedge fails.',
+    related: ['Costs of Liquidity', 'Imperfect Hedging', 'Currency Risk'],
+    tags: ['risk management', 'liquidity'],
+  },
+  {
+    term: 'Costs of Liquidity',
+    moduleId: 7,
+    definition:
+      'Why balance-sheet hedging isn\'t free: (1) safe assets (Treasuries, deposits) earn a low return; (2) interest income is taxable; (3) the temptation to spend the precautionary cash; (4) for foreign-currency positions, possible credit risk on foreign bonds. If a liquid derivative exists, it is usually the safer and cheaper tool.',
+    related: ['Liquidity as a Substitute for Hedging'],
+    tags: ['liquidity'],
+  },
+  {
+    term: 'Operational Hedging',
+    moduleId: 7,
+    definition:
+      'Changing operations so costs and revenues are denominated in the same currency — e.g., Honda moving car production to the US, where ~50% of its sales are. Creates a natural hedge that can eliminate the need for derivatives or balance-sheet hedges entirely.',
+    related: ['Natural Hedge', 'Honda Case', 'Currency Risk'],
+    tags: ['risk management', 'fx'],
+  },
+  {
+    term: 'Natural Hedge',
+    moduleId: 7,
+    definition:
+      'When costs and revenues move together with the risk factor — same-currency denomination means exchange-rate moves hit both sides equally and profitability is insulated. Honda\'s US production against US sales is the canonical example.',
+    related: ['Operational Hedging', 'Honda Case'],
+    tags: ['risk management', 'fx'],
+  },
+  {
+    term: 'Honda Case',
+    moduleId: 7,
+    definition:
+      'Japanese carmaker, ~50% of car sales in the US; yen costs + dollar revenues → fears dollar depreciation. Could short USD futures (position size unclear — depends on future sales) or borrow in dollars and invest in yen. In practice: 20-F states no hedging derivatives for FY2023–25 and there is no significant foreign-currency debt — Honda relies on production moved to the US (natural hedge).',
+    related: ['Operational Hedging', 'Natural Hedge'],
+    tags: ['case', 'fx'],
+  },
+  {
+    term: 'Nintendo Case',
+    moduleId: 7,
+    definition:
+      'In 2010 Nintendo held $7.4B of cash in foreign currencies (~70% of its cash; $3.4B in USD, €2.7B) while earning 80%+ of revenue abroad with yen costs. A 15-year-high yen produced ¥62.1B appraisal losses and Nintendo\'s first interim net loss in 7 years (¥2.01B). Verdict: SPECULATION — operations are long dollars, so holding USD cash adds same-direction exposure (the "wrong direction"); the correct hedge is to SHORT dollars (borrow USD, forwards/futures, or move costs into dollars).',
+    related: ['Speculation', 'Operational Exposure', 'Rolls-Royce Case'],
+    tags: ['case', 'fx'],
+  },
+  {
+    term: 'Rolls-Royce Case',
+    moduleId: 7,
+    definition:
+      'Feb 2017: RR reported a £4.6B pre-tax loss, driven by a £4.4B mark-to-market revaluation of currency hedges after sterling fell post-Brexit. Engines and long-term service contracts are priced in dollars while costs are mostly sterling → operations long USD → RR shorts $5–6B/year of net dollar inflows (hedgebook $38B ≈ 2.5× sales, covering multi-year contracts). Verdict: HEDGING — correct direction, backed by signed future dollar income, no cash impact while hedges stay open ("searching for zero").',
+    related: ['Hedging', 'Marking to Market', 'Nintendo Case'],
+    tags: ['case', 'fx'],
+  },
+  {
+    term: 'Hedge Ratio',
+    moduleId: 7,
+    definition:
+      'The share of expected output/exposure covered by hedges. US oil producers: 51.7% hedged entering 2020, but only 21% of 2025 output and 4% of 2026 — cutting hedges because "prices went up" is a price view, i.e., speculation. Producers (long oil) should short; consumers like airlines (short oil) should go long.',
+    related: ['Speculation', 'Southwest Airlines Case', 'Operational Exposure'],
+    tags: ['risk management', 'commodities'],
+  },
+  {
+    term: 'Southwest Airlines Case',
+    moduleId: 7,
+    definition:
+      'Ran a fuel-hedging program from the 2000s but stopped hedging fuel in 2025 — CEO Bob Jordan: "With the exception of a couple of positive years, it\'s not been beneficial… for the past 10 to 15 years." That judges a hedge by trading P&L, not risk elimination. Unhedged consequences of an oil spike: financial-distress risk, wrecked compensation signals, and uncertain ability to pass higher prices through to fares.',
+    related: ['Hedge Ratio', 'Good Reasons to Hedge', 'The Search for Zero'],
+    tags: ['case', 'commodities'],
+  },
+  {
+    term: 'Weapons of Mass Destruction (Buffett on Derivatives)',
+    moduleId: 7,
+    definition:
+      'Warren Buffett\'s famous warning that derivatives are "financial weapons of mass destruction" — aimed at firms using derivatives to chase trading profits (speculation) rather than to eliminate risks. The course\'s rule: protect the business, don\'t play the market.',
+    related: ['Speculation', 'Hedging'],
+    tags: ['risk management'],
+  },
 ]
 
 export const allModuleIds = Array.from(new Set(GLOSSARY.map((g) => g.moduleId))).sort()
