@@ -2148,6 +2148,333 @@ export const QUESTIONS: QuizQuestion[] = [
     difficulty: 'hard',
     topic: 'Oil hedging 2026',
   },
+
+  // ═══════════════════ MODULE 8 · Finance, Governance, and Society ═══════════════════
+  // ─── EASY ────────────────────────────────────────────────
+  {
+    id: 'm8-e1',
+    moduleId: 8,
+    prompt: 'The course summarizes all of finance in one equation. Which is it?',
+    choices: [
+      'NPV = −I + PV(FCF); invest if NPV > 0',
+      'EPS = Net Income / Shares Outstanding',
+      'WACC = wD·rD·(1−t) + wE·rE',
+      'Equity = Assets + Liabilities',
+    ],
+    answerIndex: 0,
+    explanation:
+      'The whole course reduces to discounting future cash flows: NPV = −I + PV(FCF), invest if positive. Module 8 studies where this rule breaks down.',
+    difficulty: 'easy',
+    topic: 'Overview',
+  },
+  {
+    id: 'm8-e2',
+    moduleId: 8,
+    prompt: 'When a firm goes bankrupt, who gets paid first?',
+    choices: [
+      'Shareholders, because they own the company',
+      'Debtholders — they are senior; shareholders get only the residual',
+      'Both are paid equally, pro rata',
+      'Whoever has held the claim longest',
+    ],
+    answerIndex: 1,
+    explanation:
+      'Debt is senior: creditors are repaid in full before equity receives anything. Shareholders are the residual claimant.',
+    difficulty: 'easy',
+    topic: 'Bankruptcy priority',
+  },
+  {
+    id: 'm8-e3',
+    moduleId: 8,
+    prompt: 'Because of limited liability, the value of equity equals…',
+    choices: [
+      'Assets − Debt, even if negative',
+      'max(Assets − Debt, 0)',
+      'Assets + Debt',
+      'Debt − Assets',
+    ],
+    answerIndex: 1,
+    explanation:
+      'Equity is floored at zero: shareholders cannot lose more than they invested. E = max(Assets − Debt, 0) — equity behaves like a call option on the firm’s assets.',
+    difficulty: 'easy',
+    topic: 'Limited liability',
+  },
+  {
+    id: 'm8-e4',
+    moduleId: 8,
+    prompt: 'What are the two agency costs of debt introduced in this module?',
+    choices: [
+      'Dilution and the tax shield',
+      'Excessive risk taking and underinvestment',
+      'Adverse selection and moral hazard',
+      'Bankruptcy costs and agency costs of equity',
+    ],
+    answerIndex: 1,
+    explanation:
+      'With a lot of debt, shareholders may accept negative-NPV risky projects (excessive risk taking) or reject positive-NPV projects (underinvestment).',
+    difficulty: 'easy',
+    topic: 'Agency cost of debt',
+  },
+
+  // ─── MEDIUM ──────────────────────────────────────────────
+  {
+    id: 'm8-m1',
+    moduleId: 8,
+    prompt: 'ZZ Corp has assets worth $0.5M and $1M of debt. If dissolved today, what does equity receive and what does the bank recover?',
+    choices: [
+      'Equity $0; bank recovers $0.5M',
+      'Equity −$0.5M; bank recovers $1M',
+      'Equity $0.5M; bank recovers $0.5M',
+      'Equity $0; bank recovers $1M',
+    ],
+    answerIndex: 0,
+    explanation:
+      'Equity = max(0.5 − 1, 0) = $0. The bank is senior but there is only $0.5M of assets, so it recovers $0.5M — not the full $1M.',
+    difficulty: 'medium',
+    topic: 'Bankruptcy examples',
+  },
+  {
+    id: 'm8-m2',
+    moduleId: 8,
+    prompt: 'Why do distressed-firm shareholders sometimes want a risky project with NEGATIVE NPV?',
+    choices: [
+      'Because risky projects always have higher NPV',
+      'Because limited liability lets them keep the upside while creditors bear the downside — they can only win',
+      'Because banks require them to take risk',
+      'Because it lowers the firm’s WACC',
+    ],
+    answerIndex: 1,
+    explanation:
+      'If the firm is already worth less than its debt, shareholders get $0 in the bad state either way, but capture value in the good state. The downside falls on creditors — so they favor the gamble.',
+    difficulty: 'medium',
+    topic: 'Excessive risk taking',
+  },
+  {
+    id: 'm8-m3',
+    moduleId: 8,
+    prompt: 'Scooter Inc. (debt $1M due in a year; assets worth $900k) can take a no-cost project: 50% → assets $1.3M, 50% → assets $0.3M (discount rate 0%). What is the firm value with the project, and the NPV effect?',
+    choices: [
+      '$1.3M; creates $400k',
+      '$800k; destroys $100k',
+      '$900k; no change',
+      '$650k; destroys $250k',
+    ],
+    answerIndex: 1,
+    explanation:
+      'E[value] = 0.5×$1.3M + 0.5×$0.3M = $0.8M, versus $0.9M without the project — so it destroys $100k and is objectively negative-NPV.',
+    difficulty: 'medium',
+    topic: 'Excessive risk taking (calc)',
+  },
+  {
+    id: 'm8-m4',
+    moduleId: 8,
+    prompt: 'Same Scooter Inc. risky project. How much do the DEBTHOLDERS expect to get, and how does that compare to doing nothing?',
+    choices: [
+      'They expect $650k — a loss of $250k versus the $900k they’d get without the project',
+      'They expect $1M — a gain of $100k',
+      'They expect $900k — unchanged',
+      'They expect $300k — a loss of $600k',
+    ],
+    answerIndex: 0,
+    explanation:
+      'With the project debtholders get $1M if it succeeds and $0.3M if it fails: 0.5×$1M + 0.5×$0.3M = $650k. Without the project they’d recover $900k. They lose $250k — so they dislike it.',
+    difficulty: 'medium',
+    topic: 'Excessive risk taking (calc)',
+  },
+  {
+    id: 'm8-m5',
+    moduleId: 8,
+    prompt: 'Same Scooter Inc. risky project. What do the EQUITY holders expect, and what do they decide?',
+    choices: [
+      'They expect $0 and are indifferent',
+      'They expect $150k (0.5×$300k + 0.5×$0) and want to take it',
+      'They expect −$100k and reject it',
+      'They expect $300k for sure and take it',
+    ],
+    answerIndex: 1,
+    explanation:
+      'Equity gets $1.3M − $1M = $300k if it succeeds and $0 if it fails: 0.5×$300k = $150k, versus $0 without the project. They gain — so they take the negative-NPV gamble at creditors’ expense.',
+    difficulty: 'medium',
+    topic: 'Excessive risk taking (calc)',
+  },
+  {
+    id: 'm8-m6',
+    moduleId: 8,
+    prompt: 'How is excessive risk taking typically controlled in practice?',
+    choices: [
+      'Issuing more equity',
+      'Covenants (e.g., caps on risky investments) and monitoring by lenders',
+      'Paying a larger dividend',
+      'Increasing leverage further',
+    ],
+    answerIndex: 1,
+    explanation:
+      'Banks attach covenants restricting what the firm can do and monitor management — the standard cures for excessive risk taking driven by debt overhang.',
+    difficulty: 'medium',
+    topic: 'Fixes',
+  },
+  {
+    id: 'm8-m7',
+    moduleId: 8,
+    prompt: 'In underinvestment, why do shareholders reject a POSITIVE-NPV project?',
+    choices: [
+      'The project is too risky',
+      'They must fund it, but the payoff mostly repays creditors — so shareholders don’t reap the benefits',
+      'The discount rate is negative',
+      'Covenants forbid the project',
+    ],
+    answerIndex: 1,
+    explanation:
+      'Debt overhang: shareholders pay the investment out of pocket, but the gains go first to the senior creditors. If shareholders end up worse off, they forgo the good project.',
+    difficulty: 'medium',
+    topic: 'Underinvestment',
+  },
+  {
+    id: 'm8-m8',
+    moduleId: 8,
+    prompt: 'Scooter Inc. (debt $1M; assets $900k) can invest $100k today for a riskless $150k next year (NPV +$50k), but has no cash so shareholders must fund it. What is the shareholders’ net payoff if they take it?',
+    choices: [
+      '+$50k — they capture the NPV',
+      '−$50k — they invest $100k but recover only $50k after the bank is paid',
+      '$0 — they break even',
+      '+$100k — matching the debtholders’ gain',
+    ],
+    answerIndex: 1,
+    explanation:
+      'With the project the firm is worth $1.05M; the bank takes its full $1M, leaving $50k for equity. Net of the $100k they invested, shareholders lose $50k — so they reject a positive-NPV project.',
+    difficulty: 'medium',
+    topic: 'Underinvestment (calc)',
+  },
+  {
+    id: 'm8-m9',
+    moduleId: 8,
+    prompt: 'To cure the underinvestment, the bank cuts the $1M loan to $925k (a haircut). With the project (firm value $1.05M), what happens?',
+    choices: [
+      'Debtholders get $925k (> $900k) and equity nets +$25k — a win-win',
+      'Debtholders lose money, so they refuse',
+      'Equity still loses $50k',
+      'Nothing changes; haircuts are irrelevant',
+    ],
+    answerIndex: 0,
+    explanation:
+      'Debtholders receive $925k, better than the $900k they’d get otherwise. Equity gets $1.05M − $925k = $125k, minus the $100k invested = +$25k. Both are better off, so the project proceeds.',
+    difficulty: 'medium',
+    topic: 'Haircut (calc)',
+  },
+  {
+    id: 'm8-m10',
+    moduleId: 8,
+    prompt: 'A contract worth $10,000 can be won with 20% probability by paying a $1,000 bribe (0% chance without). Ignoring any regulation, what is the NPV of bribing?',
+    choices: [
+      '−$1,000',
+      '+$1,000',
+      '+$2,000',
+      '$0',
+    ],
+    answerIndex: 1,
+    explanation:
+      'NPV_bribe = −$1,000 + 0.20×$10,000 = −$1,000 + $2,000 = +$1,000. On pure NPV grounds (no regulation) the firm would bribe.',
+    difficulty: 'medium',
+    topic: 'Bribery NPV (calc)',
+  },
+  {
+    id: 'm8-m11',
+    moduleId: 8,
+    prompt: 'An ounce of gold trades at $2,000 in New York and $1,900 in London. What is the arbitrage, and what mainly stops it from making everyone rich?',
+    choices: [
+      'Buy in New York, sell in London for +$100; blocked by taxes only',
+      'Buy in London, sell in New York for +$100; blocked by transaction costs, price risk, competition, and scalability',
+      'There is no arbitrage because prices must already be equal',
+      'Short both markets; blocked by margin calls',
+    ],
+    answerIndex: 1,
+    explanation:
+      'Buy low (London $1,900), sell high (New York $2,000) → +$100. Limits to arbitrage — transaction costs, price risk, competition converging prices, and supply/demand — keep it from scaling.',
+    difficulty: 'medium',
+    topic: 'Law of one price',
+  },
+  {
+    id: 'm8-m12',
+    moduleId: 8,
+    prompt: 'On the social cost of corruption, what does most evidence support?',
+    choices: [
+      '“Greasing the wheels” — corruption speeds the economy up',
+      '“Sand in the wheels” — corruption slows growth; the World Bank estimates ~$2.6 trillion/year (≈5% of global GDP)',
+      'Corruption has no measurable effect on growth',
+      'Corruption only affects rich countries',
+    ],
+    answerIndex: 1,
+    explanation:
+      'Most evidence favors “sand in the wheels”: wealthier countries are less corrupt, and corruption is associated with slower growth and lower imports. The World Bank’s figure is ~$2.6T/year, ~5% of global GDP.',
+    difficulty: 'medium',
+    topic: 'Finance & society',
+  },
+
+  // ─── HARD ────────────────────────────────────────────────
+  {
+    id: 'm8-h1',
+    moduleId: 8,
+    prompt: 'Now add anti-bribery regulation to the $10,000-contract example ($1,000 bribe, 20% win): a $100,000 fine with a 2% detection probability. What is NPV_bribe, and what does the regulation do to firm value?',
+    choices: [
+      'NPV = +$1,000; regulation has no effect',
+      'NPV = −$1,000; the firm won’t bribe — regulation cuts firm value from +$1,000 to $0 while benefiting society',
+      'NPV = −$2,000; the firm is fined for sure',
+      'NPV = $0; the firm is indifferent',
+    ],
+    answerIndex: 1,
+    explanation:
+      'NPV_bribe = −$1,000 + 0.20×$10,000 − 0.02×$100,000 = −$1,000. The firm now declines to bribe (gets $0). From the firm’s private view value falls from +$1,000 to $0 — but the externality on society is removed. NPV_firm ≠ NPV_society.',
+    difficulty: 'hard',
+    topic: 'Bribery regulation (calc)',
+  },
+  {
+    id: 'm8-h2',
+    moduleId: 8,
+    prompt: 'In the Scooter Inc. underinvestment fix, why is the bank willing to grant a haircut, and what is the win-win range of new face value F (firm value with project = $1.05M; assets $900k otherwise)?',
+    choices: [
+      'The bank is charitable; any F works',
+      'Without the project the bank recovers only $900k, so it prefers any F ≥ $900k; equity accepts if (1.05M − F) − 100k ≥ 0, i.e. F ≤ $950k — win-win for $900k ≤ F ≤ $950k',
+      'The bank prefers F = $1M and never compromises',
+      'Only F = $925k can ever work',
+    ],
+    answerIndex: 1,
+    explanation:
+      'The good project raises firm value to $1.05M. The bank recovers F (≤ firm value), and beats its $900k no-project recovery whenever F ≥ $900k. Equity nets (1.05M − F) − 100k ≥ 0 ⇒ F ≤ $950k. So both sides win for F between $900k and $950k (e.g., $925k).',
+    difficulty: 'hard',
+    topic: 'Haircut band (calc)',
+  },
+  {
+    id: 'm8-h3',
+    moduleId: 8,
+    prompt: 'Studies find HBCUs pay ~20% higher bond underwriting fees, and equally-credit-scored Black/Hispanic auto borrowers pay ~70 bps more yet default less. Why do these findings matter for the law of one price?',
+    choices: [
+      'They confirm the law of one price holds perfectly',
+      'They are pure arbitrage opportunities anyone can trade away',
+      'Identical “goods” (equal-risk bonds/loans) trade at different prices in a way arbitrage can’t explain — pointing to bias, so the law of one price becomes a tool to measure injustice',
+      'They show HBCU and minority-borrower cash flows are genuinely riskier',
+    ],
+    answerIndex: 2,
+    explanation:
+      'If risk is truly equal, the law of one price says prices/fees should match. Persistent gaps that careful controls can’t attribute to risk — and that arbitrage can’t erase — point to discrimination. The pricing logic uncovers the bias.',
+    difficulty: 'hard',
+    topic: 'Law of one price & injustice',
+  },
+  {
+    id: 'm8-h4',
+    moduleId: 8,
+    prompt: 'Jérôme Kerviel lost ~$5B at Société Générale; Exxon Valdez (1989) followed a single-hull tanker choice. In the course’s framing, what do these two cases respectively illustrate?',
+    choices: [
+      'Both illustrate excessive risk taking by shareholders',
+      'Kerviel: NPV_decision-maker ≠ NPV_shareholders (agency/governance). Exxon Valdez: NPV_company ≠ NPV_society (externality) — different wedges, both asking “whose NPV is it?”',
+      'Both illustrate underinvestment from debt overhang',
+      'Kerviel is a law-of-one-price violation; Exxon Valdez is an arbitrage',
+    ],
+    answerIndex: 1,
+    explanation:
+      'Kerviel traded on his own payoff (bonus upside, limited personal downside) — a manager-vs-shareholder conflict. The single-hull choice maximized firm cost savings while imposing safety costs on society. Both show the NPV being maximized may not be the “right” one.',
+    difficulty: 'hard',
+    topic: 'Whose NPV is it?',
+  },
 ]
 
 export const questionsByModule = (moduleId: number) =>

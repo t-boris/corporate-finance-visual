@@ -1963,6 +1963,269 @@ export const GLOSSARY: GlossaryTerm[] = [
     related: ['Speculation', 'Hedging'],
     tags: ['risk management'],
   },
+
+  // ───── Module 8 · Finance, Governance, and Society ─────
+  {
+    term: 'NPV Rule (Course Summary)',
+    moduleId: 8,
+    definition:
+      'The one equation the whole course reduces to: discount future cash flows, subtract the initial investment, and invest if the result is positive. Module 8 studies the three situations where this rule breaks down.',
+    formula: 'NPV = −I + PV(FCF); invest if NPV > 0',
+    related: ['Agency Cost of Debt', 'Finance and Society', 'Law of One Price'],
+    tags: ['overview'],
+  },
+  {
+    term: 'Agency Cost of Debt',
+    moduleId: 8,
+    definition:
+      'The distortion of investment incentives caused by debt: because equity is a residual claim with limited liability, shareholders may want to accept negative-NPV projects (excessive risk taking) or reject positive-NPV projects (underinvestment) — the opposite of maximizing NPV.',
+    related: ['Excessive Risk Taking', 'Underinvestment', 'Debt Overhang', 'Covenants'],
+    tags: ['agency', 'debt'],
+  },
+  {
+    term: 'Absolute Priority (Seniority of Debt)',
+    moduleId: 8,
+    definition:
+      'In bankruptcy, debtholders are senior — repaid in full before equity gets anything. Shareholders are the residual claimant, receiving only what is left after the debt is satisfied.',
+    related: ['Residual Claimant', 'Limited Liability', 'Agency Cost of Debt'],
+    tags: ['bankruptcy'],
+  },
+  {
+    term: 'Residual Claimant',
+    moduleId: 8,
+    definition:
+      'The party paid last — equity holders. They receive assets minus debt if positive, and nothing if the firm is worth less than its debt. This residual position is what makes equity behave like a call option on the firm’s assets.',
+    related: ['Absolute Priority (Seniority of Debt)', 'Limited Liability', 'Value of Equity (Option View)'],
+    tags: ['bankruptcy'],
+  },
+  {
+    term: 'Limited Liability',
+    moduleId: 8,
+    definition:
+      'Shareholders cannot lose more than they invested; equity value is floored at zero. This asymmetry (keep all the upside, hand the downside below the debt to creditors) is the root of both agency costs of debt.',
+    formula: 'Value of Equity = max(Assets − Debt, 0)',
+    related: ['Residual Claimant', 'Excessive Risk Taking', 'Value of Equity (Option View)'],
+    tags: ['bankruptcy', 'agency'],
+  },
+  {
+    term: 'Value of Equity (Option View)',
+    moduleId: 8,
+    definition:
+      'Because of limited liability, equity is worth max(Assets − Debt, 0). Examples: XX Corp (A=$3M, D=$1M → E=$2M); YY Corp (A=$1M, D=$1M → E=$0); ZZ Corp (A=$0.5M, D=$1M → E=$0, bank recovers only $0.5M).',
+    formula: 'E = max(A − D, 0)',
+    related: ['Limited Liability', 'Absolute Priority (Seniority of Debt)'],
+    tags: ['bankruptcy', 'valuation'],
+  },
+  {
+    term: 'Excessive Risk Taking',
+    moduleId: 8,
+    definition:
+      'Also “gambling for resurrection.” A distressed firm’s shareholders take a risky negative-NPV project because they capture the upside while creditors bear the downside. Scooter Inc.: a fair-coin project (assets → $1.3M or $0.3M) cuts firm value $900k→$800k and costs debtholders $250k, yet gives equity +$150k — so they take it.',
+    related: ['Agency Cost of Debt', 'Limited Liability', 'FedEx / Gambling for Resurrection', 'Covenants'],
+    tags: ['agency', 'debt'],
+  },
+  {
+    term: 'FedEx / Gambling for Resurrection',
+    moduleId: 8,
+    definition:
+      'Anecdote: FedEx’s founder took the firm’s last ~$5,000 to Las Vegas and won ~$32,000, saving the company. With the firm otherwise lost, a negative-NPV gamble becomes rational for someone with nothing left to lose — the intuition behind excessive risk taking.',
+    related: ['Excessive Risk Taking'],
+    tags: ['case', 'agency'],
+  },
+  {
+    term: 'Debt Overhang',
+    moduleId: 8,
+    definition:
+      'A heavy existing debt load that distorts new investment decisions. It drives excessive risk taking (accept bad risky projects) and underinvestment (reject good projects whose gains accrue to creditors).',
+    related: ['Underinvestment', 'Excessive Risk Taking', 'Haircut (Debt Reduction)'],
+    tags: ['agency', 'debt'],
+  },
+  {
+    term: 'Underinvestment',
+    moduleId: 8,
+    definition:
+      'Shareholders reject a positive-NPV project because the benefits go to creditors while they fund the cost. Scooter Inc.: a riskless project (invest $100k → $150k, NPV +$50k) is refused because debtholders gain $100k while equity nets −$50k.',
+    related: ['Debt Overhang', 'Project Finance', 'Haircut (Debt Reduction)'],
+    tags: ['agency', 'debt'],
+  },
+  {
+    term: 'Project Finance',
+    moduleId: 8,
+    definition:
+      'A cure for underinvestment: shareholders set up a separate company (outside the reach of the old debt) to fund the good project, so they capture its NPV instead of handing it to existing creditors.',
+    related: ['Underinvestment', 'Debt Overhang'],
+    tags: ['agency', 'fix'],
+  },
+  {
+    term: 'Haircut (Debt Reduction)',
+    moduleId: 8,
+    definition:
+      'A cure for underinvestment: the bank voluntarily lowers the loan’s face value to unlock a good project. Scooter Inc.: cutting the $1M loan to $925k gives debtholders $925k (> $900k) and equity +$25k — a win-win. The win-win band here is a face value of $900k–$950k.',
+    related: ['Underinvestment', 'Debt Overhang', 'Project Finance'],
+    tags: ['agency', 'fix'],
+  },
+  {
+    term: 'Covenants',
+    moduleId: 8,
+    definition:
+      'Contractual restrictions in a loan agreement (e.g., caps on risky investments) that limit shareholders’ ability to expropriate creditors — the standard fix for excessive risk taking, alongside monitoring.',
+    related: ['Excessive Risk Taking', 'Monitoring', 'Agency Cost of Debt'],
+    tags: ['fix', 'debt'],
+  },
+  {
+    term: 'Monitoring',
+    moduleId: 8,
+    definition:
+      'Ongoing oversight of management’s actions by creditors (banks) to prevent value-destroying, creditor-expropriating decisions — a complement to covenants against excessive risk taking.',
+    related: ['Covenants', 'Excessive Risk Taking'],
+    tags: ['fix', 'debt'],
+  },
+  {
+    term: 'Finance and Society',
+    moduleId: 8,
+    definition:
+      'The idea that maximizing the firm’s NPV can impose costs on non-shareholders (externalities): unhealthy products, pollution, outsourcing, tax avoidance, and corruption. The firm’s NPV need not equal society’s NPV.',
+    related: ['Externality', 'NPV_firm vs NPV_society', 'Bribery (Corruption)'],
+    tags: ['society'],
+  },
+  {
+    term: 'Externality',
+    moduleId: 8,
+    definition:
+      'A cost (or benefit) of a corporate decision borne by parties outside the firm and not captured in the firm’s own NPV — e.g., pollution or a corruption payment’s social cost. The wedge between private and social NPV.',
+    related: ['Finance and Society', 'NPV_firm vs NPV_society'],
+    tags: ['society'],
+  },
+  {
+    term: 'Sand in the Wheels',
+    moduleId: 8,
+    definition:
+      'The view — supported by most evidence — that corruption slows the economy: bribes act like sand that gums up the machinery. Wealthier countries tend to be less corrupt; the World Bank estimates corruption costs $2.6 trillion/year (~5% of global GDP).',
+    related: ['Greasing the Wheels', 'Bribery (Corruption)'],
+    tags: ['society', 'corruption'],
+  },
+  {
+    term: 'Greasing the Wheels',
+    moduleId: 8,
+    definition:
+      'The competing (mostly unsupported) view that side payments help the economy by getting things done where institutions are weak. There is limited evidence corruption can help only where taxes are very high; overall the evidence favors “sand in the wheels.”',
+    related: ['Sand in the Wheels', 'Bribery (Corruption)'],
+    tags: ['society', 'corruption'],
+  },
+  {
+    term: 'Bribery (Corruption)',
+    moduleId: 8,
+    definition:
+      'Paying an official to win business. Treated in the course as an NPV decision: a $10,000 contract with a 20% win chance from a $1,000 bribe has NPV −$1,000 + 0.2×$10,000 = +$1,000 → bribe (absent regulation). It carries an externality: the social cost is not in the firm’s NPV.',
+    formula: 'NPV_bribe = −bribe + p(win)×contract − p(detect)×fine',
+    related: ['Anti-Bribery Regulation', 'Sand in the Wheels', 'NPV_firm vs NPV_society'],
+    tags: ['society', 'corruption'],
+  },
+  {
+    term: 'Anti-Bribery Regulation',
+    moduleId: 8,
+    definition:
+      'Laws (e.g., UK Bribery Act, US FCPA) that add an expected penalty to the bribery decision. With a $100,000 fine and 2% detection, NPV_bribe = −1,000 + 0.2×10,000 − 0.02×100,000 = −$1,000 → don’t bribe. From the firm’s private view this destroys value (+$1,000 → $0); society gains.',
+    formula: 'add term: − p(detect) × fine',
+    related: ['Bribery (Corruption)', 'Zeume (2017)', 'NPV_firm vs NPV_society'],
+    tags: ['society', 'corruption', 'regulation'],
+  },
+  {
+    term: 'Zeume (2017)',
+    moduleId: 8,
+    definition:
+      '“Bribes and Firm Value” — an event study around the UK Bribery Act. Stock returns turned negative for oil & gas and aero/defense firms and for UK firms operating in perceivably corrupt countries, but positive for their non-UK competitors (a unilateral-regulation side effect). UK firms then saw slower sales growth and fewer M&As in those markets. (The Act itself was enacted in 2010 / in force 2011; 2017 is the paper’s year.)',
+    related: ['Anti-Bribery Regulation', 'Bribery (Corruption)'],
+    tags: ['society', 'corruption', 'research'],
+  },
+  {
+    term: 'NPV_firm vs NPV_society',
+    moduleId: 8,
+    definition:
+      'The central lesson of the finance-and-society thread: the NPV a firm maximizes is not the same as society’s NPV. “Whose NPV is it?” — the two diverge whenever decisions have externalities (corruption, pollution, safety).',
+    related: ['Externality', 'Finance and Society', 'Whose NPV Is It?'],
+    tags: ['society'],
+  },
+  {
+    term: 'Law of One Price',
+    moduleId: 8,
+    definition:
+      'The same good or asset trading in two markets at the same time must have the same price. Applied to projects: same investment, cash flows and risk ⇒ same NPV. Violations imply either an arbitrage or a bias.',
+    related: ['Arbitrage', 'Limits to Arbitrage', 'Law of One Price and Injustice'],
+    tags: ['pricing'],
+  },
+  {
+    term: 'Arbitrage',
+    moduleId: 8,
+    definition:
+      'Buying and selling the same good in two markets simultaneously to pocket a price difference with no risk. Gold at $2,000 in New York vs $1,900 in London: buy London, sell New York, earn $100 (“buy low, sell high”).',
+    related: ['Law of One Price', 'Limits to Arbitrage'],
+    tags: ['pricing'],
+  },
+  {
+    term: 'Limits to Arbitrage',
+    moduleId: 8,
+    definition:
+      'Why obvious arbitrages persist and don’t make everyone rich: transaction costs, price risk (the price moves before you complete the trade), competition (traders converge the prices), and scalability limits (supply and demand move against you).',
+    related: ['Arbitrage', 'Law of One Price'],
+    tags: ['pricing'],
+  },
+  {
+    term: 'Law of One Price and Injustice',
+    moduleId: 8,
+    definition:
+      'When identical “goods” trade at different prices and arbitrage cannot explain it, the gap can reveal bias. The law of one price becomes a tool for measuring discrimination in financial and labor markets.',
+    related: ['HBCU Bond Discrimination', 'Auto Loan Disparities', 'Gender Wage Gap'],
+    tags: ['society', 'pricing'],
+  },
+  {
+    term: 'HBCU Bond Discrimination',
+    moduleId: 8,
+    definition:
+      'Dougal, Gao, Mayew & Parsons (2019): comparable schools should pay the same to issue comparable bonds, but Historically Black Colleges and Universities pay underwriting fees ~20% higher (and get slightly lower bond prices). The authors control extensively and cannot rule out race.',
+    related: ['Law of One Price and Injustice', 'Auto Loan Disparities'],
+    tags: ['society', 'research'],
+  },
+  {
+    term: 'Auto Loan Disparities',
+    moduleId: 8,
+    definition:
+      'Butler, Mayer & Weston (2020): among borrowers with the same credit score, Black and Hispanic borrowers are approved at a 1.5% lower rate, pay ~70 basis points/year more interest, yet default less — inconsistent with the law of one price if risk is truly equal.',
+    related: ['Law of One Price and Injustice', 'HBCU Bond Discrimination'],
+    tags: ['society', 'research'],
+  },
+  {
+    term: 'Gender Wage Gap',
+    moduleId: 8,
+    definition:
+      'Blau & Kahn (2017, JEL): from 1990–2010, within the same occupations women earned ~8.4% less than men — another law-of-one-price violation used to uncover bias. A McKinsey report notes Covid disproportionately hurt women’s employment.',
+    related: ['Law of One Price and Injustice'],
+    tags: ['society', 'research'],
+  },
+  {
+    term: 'Rogue Trader (Kerviel)',
+    moduleId: 8,
+    definition:
+      'Jérôme Kerviel lost ~$5B (≈€4.9B) at Société Générale trading on his own payoff: huge bonus if the risky bets won, limited personal loss if they failed — with investors’ money at stake. Illustrates NPV_decision-maker ≠ NPV_shareholders (an agency/governance conflict).',
+    related: ['Whose NPV Is It?', 'Agency Cost of Debt'],
+    tags: ['case', 'governance'],
+  },
+  {
+    term: 'Exxon Valdez (One-Hull vs Two-Hull)',
+    moduleId: 8,
+    definition:
+      'The 1989 oil spill illustrates NPV_company ≠ NPV_society: a single-hull tanker is cheaper and carries more oil (higher firm NPV), while a double-hull is safer (higher social NPV). Cost-minimizing can overlook large external costs. (The U.S. OPA 1990 later mandated double hulls.)',
+    related: ['Whose NPV Is It?', 'Externality', 'NPV_firm vs NPV_society'],
+    tags: ['case', 'society'],
+  },
+  {
+    term: 'Whose NPV Is It?',
+    moduleId: 8,
+    definition:
+      'The module’s closing question. The NPV being maximized may belong to shareholders, a self-interested decision-maker (Kerviel), the company (Exxon Valdez), or society — and these need not coincide. Some value (e.g., the Gies family’s philanthropy) does not translate into dollars at all.',
+    related: ['NPV_firm vs NPV_society', 'Rogue Trader (Kerviel)', 'Exxon Valdez (One-Hull vs Two-Hull)'],
+    tags: ['overview', 'society'],
+  },
 ]
 
 export const allModuleIds = Array.from(new Set(GLOSSARY.map((g) => g.moduleId))).sort()
